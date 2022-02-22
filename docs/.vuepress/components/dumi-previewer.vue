@@ -182,7 +182,7 @@ export default {
     margin: 0 auto;
     padding: 40px 24px;
     width: 360px;
-    max-height: 675px;
+    max-height: 700px;
   }
 
   .dumi-previewer-actions {
