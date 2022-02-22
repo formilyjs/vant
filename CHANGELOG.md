@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0-beta.4(2022-02-22)
+
+### :tada: Enhancements
+
+1. [feat: change style scss to less](https://github.com/formilyjs/vant/commit/5e7d95a) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
 ## v1.0.0-beta.3(2022-02-22)
 
 ### No Change Log
