@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.0-beta.2(2022-02-22)
+
+### No Change Log
+
 ## v1.0.0-beta.1(2022-02-22)
 
 ### :blush: Other Changes
