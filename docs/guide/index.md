@@ -36,7 +36,7 @@
 
 ```bash
 $ npm install --save vant@latest-v2
-$ npm install --save @formily/core @formily/vue @vue/composition-api @formily/vant
+$ npm install --save @vue/composition-api @formily/vant
 ```
 
 ## 注意
