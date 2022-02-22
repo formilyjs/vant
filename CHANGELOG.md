@@ -1,5 +1,21 @@
 # Changelog
 
+## v1.0.0-beta.6(2022-02-22)
+
+### :memo: Documents Changes
+
+1. [docs: change README.md](https://github.com/formilyjs/vant/commit/de5e33d) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
+## v1.0.0-beta.5(2022-02-22)
+
+### :bug: Bug Fixes
+
+1. [fix: less variable bug](https://github.com/formilyjs/vant/commit/6be3892) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
+### :memo: Documents Changes
+
+1. [docs: change npm install](https://github.com/formilyjs/vant/commit/760e672) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
 ## v1.0.0-beta.4(2022-02-22)
 
 ### :tada: Enhancements
