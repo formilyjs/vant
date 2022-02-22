@@ -1,68 +1,208 @@
 <template>
-  <Form
-    :labelCol="6"
-    :wrapperCol="10"
-    :form="form"
-    :previewTextPlaceholder="vnode"
-  >
+  <Form :form="form" :previewTextPlaceholder="vnode">
     <SchemaField>
       <SchemaStringField
-        x-decorator="FormItem"
-        title="文本预览"
+        name="input"
         x-component="Input"
+        :x-component-props="{ label: '文本预览' }"
         default="Hello world"
       />
+
       <SchemaStringField
+        name="switch"
         x-decorator="FormItem"
-        title="选择项预览"
-        x-component="PreviewText.Select"
+        :x-decorator-props="{ label: '开关' }"
+        x-component="PreviewText.Switch"
+        :default="true"
+      />
+
+      <SchemaArrayField
+        name="checkboxGroup"
+        x-decorator="FormItem"
+        :x-decorator-props="{
+          label: '复选框组',
+        }"
+        :enum="[
+          { label: '复选框 1', name: 123, shape: 'square' },
+          { label: '复选框 2', name: 222, shape: 'square' },
+        ]"
+        :default="[123, 222]"
+        x-component="PreviewText.Checkbox"
         :x-component-props="{
+          direction: 'horizontal',
           multiple: true,
         }"
-        :default="['123', '222']"
+      />
+
+      <SchemaArrayField
+        name="radio"
+        x-decorator="FormItem"
+        :x-decorator-props="{
+          label: '单选框',
+        }"
         :enum="[
-          { label: 'A111', value: '123' },
-          {
-            label: 'A222',
-            value: '222',
+          { label: '单选框 1', name: 1 },
+          { label: '单选框 1', name: 2 },
+        ]"
+        :default="1"
+        x-component="PreviewText.Checkbox"
+        :x-component-props="{
+          direction: 'horizontal',
+        }"
+      />
+
+      <SchemaStringField
+        name="stepper"
+        x-decorator="FormItem"
+        :x-decorator-props="{
+          label: '步进器',
+        }"
+        :default="50"
+        x-component="PreviewText.Stepper"
+      />
+
+      <SchemaStringField
+        name="rate"
+        x-decorator="FormItem"
+        :x-decorator-props="{
+          label: '评分',
+        }"
+        :default="3.5"
+        x-component="PreviewText.Rate"
+        :x-component-props="{
+          allowHalf: true,
+        }"
+      />
+
+      <SchemaStringField
+        name="slider"
+        x-decorator="FormItem"
+        :x-decorator-props="{
+          label: '滑块',
+        }"
+        :default="50"
+        x-component="PreviewText.Slider"
+      />
+
+      <SchemaStringField
+        name="uploader"
+        x-decorator="FormItem"
+        :x-decorator-props="{
+          label: '文件上传',
+        }"
+        :default="[
+          { url: 'https://img01.yzcdn.cn/vant/leaf.jpg' },
+          { url: 'https://cloud-image', isImage: true },
+        ]"
+        x-component="PreviewText.Uploader"
+      />
+
+      <SchemaStringField
+        name="picker"
+        default="湖州"
+        x-component="PreviewText.Picker"
+        :x-component-props="{
+          formItemProps: {
+            label: '选择器',
+            placeholder: '点击选择城市',
           },
-        ]"
+          pickerProps: {
+            columns: [
+              '杭州',
+              '宁波',
+              '温州',
+              '绍兴',
+              '湖州',
+              '嘉兴',
+              '金华',
+              '衢州',
+            ],
+          },
+        }"
       />
+
       <SchemaStringField
-        x-decorator="FormItem"
-        title="日期预览"
-        x-component="PreviewText.DatePicker"
-        default="2020-11-23 22:15:20"
+        name="datetimePicker"
+        default="05:15"
+        x-component="PreviewText.DatetimePicker"
+        :x-component-props="{
+          formItemProps: {
+            label: '时间选择',
+            placeholder: '点击选择时间',
+          },
+          popupProps: {},
+          datetimePickerProps: {
+            type: 'time',
+          },
+          fieldListeners: {},
+          popupListeners: {},
+          datetimePickerListeners: {},
+        }"
       />
+
       <SchemaStringField
-        x-decorator="FormItem"
-        title="日期范围预览"
-        x-component="PreviewText.DatePicker"
-        :default="['2020-11-23 22:15:20', '2020-11-24 22:15:20']"
+        name="area"
+        default="北京市/北京市/东城区"
+        x-component="PreviewText.Area"
+        :x-component-props="{
+          formItemProps: {
+            label: '地区选择',
+            placeholder: '点击选择省市区',
+            format: (val) =>
+              (val || [])
+                .filter((item) => !!item)
+                .map((item) => item && item.name)
+                .join('/'),
+          },
+          popupProps: {},
+          areaProps: {
+            areaList: {
+              province_list: {
+                110000: '北京市',
+                120000: '天津市',
+              },
+              city_list: {
+                110100: '北京市',
+                120100: '天津市',
+              },
+              county_list: {
+                110101: '东城区',
+                110102: '西城区',
+              },
+            },
+          },
+          fieldListeners: {},
+          popupListeners: {},
+          areaListeners: {},
+        }"
       />
+
       <SchemaStringField
-        x-decorator="FormItem"
-        title="Cascader预览"
-        x-component="PreviewText.Cascader"
-        :default="['hangzhou', 'yuhang']"
-        :enum="[
-          { label: '杭州', value: 'hangzhou' },
-          { label: '余杭', value: 'yuhang' },
-        ]"
+        name="calendar"
+        default="2/24"
+        x-component="PreviewText.Calendar"
+        :x-component-props="{
+          formItemProps: {
+            label: '日历',
+            placeholder: '选择日历',
+            format: (date) =>
+              date && `${date.getMonth() + 1}/${date.getDate()}`,
+          },
+          calendarProps: {},
+          fieldListeners: {},
+          calendarListeners: {},
+        }"
       />
     </SchemaField>
-    <FormButtonGroup alignFormItem>
-      <Button
-        @click="
-          () => {
-            form.setState((state) => {
-              state.editable = !state.editable
-            })
-          }
-        "
-        >切换阅读态</Button
-      >
-    </FormButtonGroup>
+
+    <Submit
+      :style="{ 'margin-top': '16px' }"
+      round
+      block
+      @click="changeEditable"
+    >
+      切换阅读态
+    </Submit>
   </Form>
 </template>
 
@@ -70,38 +210,31 @@
 import { h } from '@vue/composition-api'
 import { createForm } from '@formily/core'
 import { createSchemaField } from '@formily/vue'
-import {
-  Form,
-  FormItem,
-  Input,
-  PreviewText,
-  FormButtonGroup,
-} from '@formily/vant'
-import { Button } from 'vant'
+import { Form, PreviewText, Input, FormItem, Submit } from '@formily/vant'
 
+const form = createForm()
 const fields = createSchemaField({
   components: {
-    FormItem,
-    Input,
     PreviewText,
+    Input,
+    FormItem,
   },
 })
 
 export default {
-  components: {
-    Form,
-    FormButtonGroup,
-    Button,
-    ...fields,
-  },
+  components: { Submit, Form, ...fields },
   data() {
-    const form = createForm()
     return {
       form,
       vnode: () => h('div', {}, '123'),
     }
   },
-
-  mounted() {},
+  methods: {
+    changeEditable() {
+      this.form.setState((state) => {
+        state.editable = !state.editable
+      })
+    },
+  },
 }
 </script>

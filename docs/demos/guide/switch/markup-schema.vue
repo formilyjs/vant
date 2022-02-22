@@ -1,32 +1,28 @@
 <template>
-  <FormProvider :form="form">
+  <Form :form="form">
     <SchemaField>
-      <SchemaBooleanField
-        name="switch"
-        title="开关"
-        x-decorator="FormItem"
-        x-component="Switch"
-      />
+      <SchemaStringField name="switch" title="评分" x-component="Switch" />
     </SchemaField>
-    <Submit @submit="log">提交</Submit>
-  </FormProvider>
+    <Submit :style="{ 'margin-top': '16px' }" round block @submit="log">
+      提交
+    </Submit>
+  </Form>
 </template>
 
 <script>
 import { createForm } from '@formily/core'
-import { createSchemaField, FormProvider } from '@formily/vue'
-import { FormItem, Switch, Submit } from '@formily/vant'
+import { createSchemaField } from '@formily/vue'
+import { Switch, Submit, Form } from '@formily/vant'
 
 const form = createForm()
 const fields = createSchemaField({
   components: {
-    FormItem,
     Switch,
   },
 })
 
 export default {
-  components: { FormProvider, ...fields, Submit },
+  components: { ...fields, Submit, Form },
   data() {
     return {
       form,

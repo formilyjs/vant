@@ -1,37 +1,36 @@
 <template>
-  <Form :form="form">
+  <Form class="checkbox" :form="form">
     <SchemaField :schema="schema" />
-    <Submit @submit="onSubmit">提交</Submit>
+    <Submit :style="{ 'margin-top': '16px' }" round block @submit="log">
+      提交
+    </Submit>
   </Form>
 </template>
 
 <script>
 import { createForm } from '@formily/core'
 import { createSchemaField } from '@formily/vue'
-import { Form, FormItem, Checkbox, Submit } from '@formily/vant'
+import { Form, Checkbox, Submit } from '@formily/vant'
 
 const schema = {
   type: 'object',
   properties: {
-    checkbox: {
-      type: 'number',
-      title: '是否确认',
-      'x-decorator': 'FormItem',
+    single: {
+      type: 'boolean',
       'x-component': 'Checkbox',
+      'x-component-props': { label: '选项' },
     },
-    checkboxGroup: {
+    multiple: {
       type: 'array',
-      title: '复选',
-      'x-decorator': 'FormItem',
       'x-component': 'Checkbox.Group',
       enum: [
         {
           label: '选项1',
-          value: 1,
+          name: 1,
         },
         {
           label: '选项2',
-          value: 2,
+          name: 2,
         },
       ],
     },
@@ -41,7 +40,6 @@ const schema = {
 const form = createForm()
 const { SchemaField } = createSchemaField({
   components: {
-    FormItem,
     Checkbox,
   },
 })
@@ -55,10 +53,19 @@ export default {
     }
   },
   methods: {
-    onSubmit(value) {
+    log(value) {
       console.log(value)
     },
   },
 }
 </script>
-l
+
+<style lang="scss" scoped>
+.checkbox {
+  ::v-deep {
+    .van-checkbox {
+      margin: 0 0 8px;
+    }
+  }
+}
+</style>

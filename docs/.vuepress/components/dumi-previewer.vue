@@ -177,7 +177,12 @@ export default {
   border-radius: 1px;
 
   .dumi-previewer-demo {
+    background-color: #f7f8fa;
+    border-radius: 10px;
+    margin: 0 auto;
     padding: 40px 24px;
+    width: 360px;
+    max-height: 675px;
   }
 
   .dumi-previewer-actions {

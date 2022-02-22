@@ -4,10 +4,10 @@ const utils = require('./util')
 const componentFiles = utils
   .getFiles(path.resolve(__dirname, '../guide'))
   .map((item) => item.replace(/(\.md)/g, ''))
-  .filter((item) => !['el-form', 'el-form-item', 'index'].includes(item))
+  .filter((item) => !['index'].includes(item))
 
 module.exports = {
-  title: 'Formily Vant',
+  title: 'Van',
   dest: './doc-site',
   theme: '@vuepress-dumi/dumi',
   head: [
@@ -16,6 +16,13 @@ module.exports = {
       {
         rel: 'icon',
         href: '//img.alicdn.com/imgextra/i3/O1CN01XtT3Tv1Wd1b5hNVKy_!!6000000002810-55-tps-360-360.svg',
+      },
+    ],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://unpkg.com/vant@2.12.44/lib/index.css',
       },
     ],
   ],
@@ -53,4 +60,16 @@ module.exports = {
       },
     ],
   ],
+  configureWebpack: (config, isServer) => {
+    return {
+      resolve: {
+        alias: {
+          '@formily/vant': path.resolve(
+            __dirname,
+            '../../packages/components/src'
+          ),
+        },
+      },
+    }
+  },
 }

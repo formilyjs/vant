@@ -3,30 +3,34 @@
     <SchemaField>
       <SchemaStringField
         name="input"
-        title="输入框"
-        x-decorator="FormItem"
         x-component="Input"
+        :x-component-props="{ label: '输入框', placeholder: '请输入' }"
       />
       <SchemaStringField
         name="textarea"
-        title="文本框"
-        x-decorator="FormItem"
-        x-component="Input.TextArea"
+        x-component="Input"
+        :x-component-props="{
+          autosize: true,
+          type: 'textarea',
+          label: '文本框',
+          placeholder: '请输入',
+        }"
       />
     </SchemaField>
-    <Submit @submit="log">提交</Submit>
+    <Submit :style="{ 'margin-top': '16px' }" round block @submit="log">
+      提交
+    </Submit>
   </FormProvider>
 </template>
 
 <script>
 import { createForm } from '@formily/core'
 import { createSchemaField, FormProvider } from '@formily/vue'
-import { FormItem, Input, Submit } from '@formily/vant'
+import { Input, Submit } from '@formily/vant'
 
 const form = createForm()
 const fields = createSchemaField({
   components: {
-    FormItem,
     Input,
   },
 })

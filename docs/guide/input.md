@@ -1,6 +1,6 @@
 # Input
 
-> 文本输入框
+> 输入框
 
 ## Markup Schema 案例
 
@@ -16,4 +16,4 @@
 
 ## API
 
-参考 [https://element.eleme.io/#/zh-CN/component/input](https://element.eleme.io/#/zh-CN/component/input)
+参考 [https://vant-contrib.gitee.io/vant/v2/#/zh-CN/field#api](https://vant-contrib.gitee.io/vant/v2/#/zh-CN/field#api)

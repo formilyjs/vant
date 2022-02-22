@@ -1,6 +1,6 @@
 # Switch
 
-> 开关组件
+> 开关
 
 ## Markup Schema 案例
 
@@ -16,4 +16,4 @@
 
 ## API
 
-参考 [https://element.eleme.io/#/zh-CN/component/switch](https://element.eleme.io/#/zh-CN/component/switch)
+参考 [https://vant-contrib.gitee.io/vant/v2/#/zh-CN/switch#api](https://vant-contrib.gitee.io/vant/v2/#/zh-CN/switch#api)

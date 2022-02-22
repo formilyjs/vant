@@ -1,8 +1,8 @@
 ---
 home: true
-heroText: Formily Vant
-tagline: 基于 Vant 封装的Formily2.x组件体系
-actionText: 开发指南
+heroText: Formily Van
+tagline: 基于 Van 封装的Formily2.x组件体系
+actionText: 组件文档
 actionLink: /guide/
 features:
   - title: 更易用
@@ -19,7 +19,7 @@ footer: Open-source MIT Licensed | Copyright © 2019-present
 vue2:
 
 ```bash
-$ npm install --save vant
+$ npm install --save vant@latest-v2
 $ npm install --save @formily/core @formily/vue @vue/composition-api @formily/vant
 ```
 

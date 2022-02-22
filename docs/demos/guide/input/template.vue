@@ -3,23 +3,31 @@
     <Field
       name="input"
       title="输入框"
-      :decorator="[FormItem]"
-      :component="[Input]"
+      :component="[Input, { label: '输入框', placeholder: '请输入' }]"
     />
     <Field
       name="textarea"
       title="文本框"
-      :decorator="[FormItem]"
-      :component="[Input.TextArea]"
+      :component="[
+        Input,
+        {
+          autosize: true,
+          type: 'textarea',
+          label: '文本框',
+          placeholder: '请输入',
+        },
+      ]"
     />
-    <Submit @submit="log">提交</Submit>
+    <Submit :style="{ 'margin-top': '16px' }" round block @submit="log">
+      提交
+    </Submit>
   </FormProvider>
 </template>
 
 <script>
 import { createForm } from '@formily/core'
 import { FormProvider, Field } from '@formily/vue'
-import { FormItem, Input, Submit } from '@formily/vant'
+import { Input, Submit } from '@formily/vant'
 
 const form = createForm()
 
@@ -27,7 +35,6 @@ export default {
   components: { FormProvider, Field, Submit },
   data() {
     return {
-      FormItem,
       Input,
       form,
     }

@@ -1,42 +1,42 @@
 <template>
-  <FormProvider :form="form">
+  <Form class="radio" :form="form">
     <SchemaField>
       <SchemaStringField
         name="input"
         title="单选"
-        x-decorator="FormItem"
         x-component="Radio.Group"
         :enum="[
           {
             label: '选项1',
-            value: 1,
+            name: 1,
           },
           {
             label: '选项2',
-            value: 2,
+            name: 2,
           },
         ]"
       />
     </SchemaField>
-    <Submit @submit="log">提交</Submit>
-  </FormProvider>
+    <Submit :style="{ 'margin-top': '16px' }" round block @submit="log">
+      提交
+    </Submit>
+  </Form>
 </template>
 
 <script>
 import { createForm } from '@formily/core'
-import { createSchemaField, FormProvider } from '@formily/vue'
-import { FormItem, Radio, Submit } from '@formily/vant'
+import { createSchemaField } from '@formily/vue'
+import { Radio, Submit, Form } from '@formily/vant'
 
 const form = createForm()
 const fields = createSchemaField({
   components: {
-    FormItem,
     Radio,
   },
 })
 
 export default {
-  components: { FormProvider, ...fields, Submit },
+  components: { ...fields, Submit, Form },
   data() {
     return {
       form,
@@ -49,3 +49,13 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.radio {
+  ::v-deep {
+    .van-radio {
+      margin: 0 0 8px;
+    }
+  }
+}
+</style>

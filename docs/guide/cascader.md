@@ -1,6 +1,6 @@
 # Cascader
 
-> 级联选择器
+> 级联选择
 
 ## Markup Schema 案例
 
@@ -16,4 +16,4 @@
 
 ## API
 
-参考 [https://element.eleme.io/#/zh-CN/component/cascader](https://element.eleme.io/#/zh-CN/component/cascader)
+参考 [https://vant-contrib.gitee.io/vant/v2/#/zh-CN/cascader#api](https://vant-contrib.gitee.io/vant/v2/#/zh-CN/cascader#api)

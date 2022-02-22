@@ -1,31 +1,19 @@
 <template>
   <Form :form="form">
     <SchemaField :schema="schema" />
-    <Submit @submit="onSubmit">提交</Submit>
+    <Submit :style="{ 'margin-top': '16px' }" round block @submit="log">
+      提交
+    </Submit>
   </Form>
 </template>
 
 <script>
 import { createForm } from '@formily/core'
 import { createSchemaField } from '@formily/vue'
-import { Form, FormItem, Switch, Submit } from '@formily/vant'
+import { Form, Switch, Submit } from '@formily/vant'
 
-const schema = {
-  type: 'object',
-  properties: {
-    switch: {
-      type: 'boolean',
-      title: '开关',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-    },
-  },
-}
-
-const form = createForm()
 const { SchemaField } = createSchemaField({
   components: {
-    FormItem,
     Switch,
   },
 })
@@ -33,13 +21,26 @@ const { SchemaField } = createSchemaField({
 export default {
   components: { Form, SchemaField, Submit },
   data() {
+    const schema = {
+      type: 'object',
+      properties: {
+        switch: {
+          type: 'number',
+          title: '评分',
+          'x-component': 'Switch',
+        },
+      },
+    }
+
+    const form = createForm()
+
     return {
       form,
       schema,
     }
   },
   methods: {
-    onSubmit(value) {
+    log(value) {
       console.log(value)
     },
   },

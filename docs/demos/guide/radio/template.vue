@@ -1,37 +1,37 @@
 <template>
-  <FormProvider :form="form">
+  <Form class="radio" :form="form">
     <Field
       name="input"
       title="单选"
-      :decorator="[FormItem]"
       :component="[Radio.Group]"
       :dataSource="[
         {
           label: '选项1',
-          value: 1,
+          name: 1,
         },
         {
           label: '选项2',
-          value: 2,
+          name: 2,
         },
       ]"
     />
-    <Submit @submit="log">提交</Submit>
-  </FormProvider>
+    <Submit :style="{ 'margin-top': '16px' }" round block @submit="log">
+      提交
+    </Submit>
+  </Form>
 </template>
 
 <script>
 import { createForm } from '@formily/core'
-import { FormProvider, Field } from '@formily/vue'
-import { FormItem, Radio, Submit } from '@formily/vant'
+import { Field } from '@formily/vue'
+import { Radio, Submit, Form } from '@formily/vant'
 
 const form = createForm()
 
 export default {
-  components: { FormProvider, Field, Submit },
+  components: { Form, Field, Submit },
   data() {
     return {
-      FormItem,
       Radio,
       form,
     }
@@ -43,3 +43,13 @@ export default {
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.radio {
+  ::v-deep {
+    .van-radio {
+      margin: 0 0 8px;
+    }
+  }
+}
+</style>

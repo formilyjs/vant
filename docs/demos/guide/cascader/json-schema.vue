@@ -1,81 +1,19 @@
 <template>
   <Form :form="form">
-    <SchemaField
-      :schema="schema"
-      :scope="{ useAsyncDataSource, transformAddress }"
-    />
-    <Submit @submit="onSubmit">提交</Submit>
+    <SchemaField :schema="schema" />
+    <Submit :style="{ 'margin-top': '16px' }" round block @submit="log">
+      提交
+    </Submit>
   </Form>
 </template>
 
 <script>
 import { createForm } from '@formily/core'
 import { createSchemaField } from '@formily/vue'
-import { Form, FormItem, Cascader, Submit } from '@formily/vant'
-import { action } from '@formily/reactive'
-import axios from 'axios'
+import { Form, Cascader, Submit } from '@formily/vant'
 
-const transformAddress = (data = {}) => {
-  return Object.entries(data).reduce((buf, [key, value]) => {
-    if (typeof value === 'string')
-      return buf.concat({
-        label: value,
-        value: key,
-      })
-    const { name, code, cities, districts } = value
-    const _cities = transformAddress(cities)
-    const _districts = transformAddress(districts)
-    return buf.concat({
-      label: name,
-      value: code,
-      children: _cities.length
-        ? _cities
-        : _districts.length
-        ? _districts
-        : undefined,
-    })
-  }, [])
-}
-
-const useAsyncDataSource = (url, transform) => {
-  return (field) => {
-    field.loading = true
-    axios
-      .get(url)
-      .then((res) => res.data)
-      .then(
-        action.bound((data) => {
-          field.dataSource = transform(data)
-          field.loading = false
-        })
-      )
-  }
-}
-
-const schema = {
-  type: 'object',
-  properties: {
-    cascader: {
-      type: 'string',
-      title: '地址选择',
-      'x-decorator': 'FormItem',
-      'x-component': 'Cascader',
-      'x-component-props': {
-        style: {
-          width: '240px',
-        },
-      },
-      'x-reactions': [
-        '{{useAsyncDataSource("//unpkg.com/china-location/dist/location.json",transformAddress)}}',
-      ],
-    },
-  },
-}
-
-const form = createForm()
 const { SchemaField } = createSchemaField({
   components: {
-    FormItem,
     Cascader,
   },
 })
@@ -83,18 +21,59 @@ const { SchemaField } = createSchemaField({
 export default {
   components: { Form, SchemaField, Submit },
   data() {
+    const schema = {
+      type: 'object',
+      properties: {
+        cascader: {
+          type: 'string',
+          'x-component': 'Cascader',
+          'x-component-props': {
+            formItemProps: {
+              label: '地区',
+              placeholder: '请选择所在地区',
+              format: (data) => {
+                const { selectedOptions = [] } = data || {}
+                return selectedOptions.map((option) => option.text).join('/')
+              },
+            },
+            popupProps: {},
+            cascaderProps: {
+              options: [
+                {
+                  text: '浙江省',
+                  value: '330000',
+                  children: [{ text: '杭州市', value: '330100' }],
+                },
+                {
+                  text: '江苏省',
+                  value: '320000',
+                  children: [{ text: '南京市', value: '320100' }],
+                },
+              ],
+            },
+            fieldListeners: {},
+            popupListeners: {},
+            cascaderListeners: {
+              change: (...args) => {
+                console.log('onChange args: ', args)
+              },
+            },
+          },
+        },
+      },
+    }
+
+    const form = createForm()
+
     return {
-      useAsyncDataSource,
-      transformAddress,
       form,
       schema,
     }
   },
   methods: {
-    onSubmit(value) {
+    log(value) {
       console.log(value)
     },
   },
 }
 </script>
-l
