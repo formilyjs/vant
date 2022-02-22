@@ -2,8 +2,6 @@ English | [简体中文](./README.zh-CN.md)
 
 <p align="center">
 <img src="https://img.alicdn.com/tfs/TB1fHhZu4D1gK0jSZFyXXciOVXa-2500-1200.png">
-<img src="https://img.shields.io/npm/dt/@formily/vant"/>
-<img src="https://img.shields.io/npm/dm/@formily/vant"/>
 <a href="https://www.npmjs.com/package/@formily/vant"><img src="https://img.shields.io/npm/v/@formily/vant.svg"></a>
 <a href="https://codecov.io/gh/formilyjs/vant">
   <img src="https://codecov.io/gh/formilyjs/vant/branch/master/graph/badge.svg?token=3V9RU8Wh9d"/>
