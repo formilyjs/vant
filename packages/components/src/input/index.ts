@@ -30,7 +30,7 @@ export const BaseInput = observer(
 )
 
 export const inputValidate = mapProps<any>(
-  { validateStatus: true, required: true, readOnly: 'readonly' },
+  { validateStatus: true, required: true },
   (props, field) => {
     if (isVoidField(field)) return props
     if (!field) return props
