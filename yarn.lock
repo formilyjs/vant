@@ -3111,16 +3111,7 @@
     lodash "^4.17.15"
     pretty "^2.0.0"
 
-"@vuepress-dumi/vuepress-plugin-dumi-previewer@0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@vuepress-dumi/vuepress-plugin-dumi-previewer/-/vuepress-plugin-dumi-previewer-0.3.3.tgz#251c5ab94302a40406e621ed3908eae7d010a3e4"
-  integrity sha512-AsdQ3bJQ4BbY1GQDv0NSnXpGe+038VaaXyg+pLvCG2o5tijXcvTy+H07SC4oRHGn9MLmXQ/0OOLIWxuiNRVBvg==
-  dependencies:
-    "@vuepress/markdown" "^1.8.0"
-    copy-to-clipboard "^3.3.1"
-    markdown-it-container "^3.0.0"
-
-"@vuepress-dumi/vuepress-plugin-dumi-previewer@latest":
+"@vuepress-dumi/vuepress-plugin-dumi-previewer@0.3.11", "@vuepress-dumi/vuepress-plugin-dumi-previewer@latest":
   version "0.3.11"
   resolved "https://registry.yarnpkg.com/@vuepress-dumi/vuepress-plugin-dumi-previewer/-/vuepress-plugin-dumi-previewer-0.3.11.tgz#0a1b17a2fd7401d43a8a5b83b5c6f7938e8115c3"
   integrity sha512-jx/NaeSMV9Chk98CZbPnyTqlaqeveUtXQDi3Zo3Lonwf+vx47kDVO33gSio8BEGgld9VmIdIiAWQx00QiR1WNQ==
@@ -3134,10 +3125,10 @@
     markdown-it-container "^3.0.0"
     vue-template-compiler "^2.6.12"
 
-"@vuepress-dumi/vuepress-theme-dumi@0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@vuepress-dumi/vuepress-theme-dumi/-/vuepress-theme-dumi-0.3.3.tgz#79568eef733a4c1015d4c1d08d9e147d8275bfbd"
-  integrity sha512-v+sNIHjAq+WxFoOwWubUo5km9d1qRug7oeTU8RP98OI11f7vOTin4aZ+wP4Dpg5LHrbu5hN9GNVNAibGmIw47w==
+"@vuepress-dumi/vuepress-theme-dumi@0.3.11":
+  version "0.3.11"
+  resolved "https://registry.yarnpkg.com/@vuepress-dumi/vuepress-theme-dumi/-/vuepress-theme-dumi-0.3.11.tgz#2b46f6e7fc55230ea32a4f4f8d166e9efff0012f"
+  integrity sha512-uqV9qhuDEG7D1OGHlfcTJVWbQPR9/np6b8HROSefogVjz6DCT+U7WZZ8dYDSS6QRMS3VDJN9QCtIEr0zfvj0lQ==
   dependencies:
     "@vuepress-dumi/vuepress-plugin-dumi-previewer" latest
 
