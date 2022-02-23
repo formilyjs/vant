@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.0.0-beta.9(2022-02-23)
+
+### :bug: Bug Fixes
+
+1. [fix: remove form-item default readOnly](https://github.com/formilyjs/vant/commit/2e28848) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
+### :memo: Documents Changes
+
+1. [docs: change index.html README.md](https://github.com/formilyjs/vant/commit/d4480de) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
+### :blush: Other Changes
+
+1. [chore: change vuepress config github link to vant](https://github.com/formilyjs/vant/commit/d48a4f5) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
 ## v1.0.0-beta.8(2022-02-23)
 
 ### :memo: Documents Changes
