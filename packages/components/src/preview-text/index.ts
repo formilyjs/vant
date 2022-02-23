@@ -1,4 +1,3 @@
-/* eslint-disable vue/one-component-per-file */
 import { defineComponent, computed, toRef, Ref } from '@vue/composition-api'
 import {
   createContext,
