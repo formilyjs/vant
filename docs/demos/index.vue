@@ -4,7 +4,7 @@
       <SchemaStringField
         name="input"
         x-component="Input"
-        :x-component-props="{ label: '输入框', placeholder: '请输入...' }"
+        :x-component-props="{ label: '输入框', placeholder: '请输入' }"
       />
 
       <SchemaStringField

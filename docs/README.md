@@ -14,6 +14,13 @@ features:
 footer: Open-source MIT Licensed | Copyright © 2019-present
 ---
 
+## 安装
+
+```bash
+$ npm install --save vant@latest-v2
+$ npm install --save @vue/composition-api @formily/vant
+```
+
 ## 快速开始
 
 <dumi-previewer demoPath="index" :collapsed="false" />
