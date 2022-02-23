@@ -34,6 +34,8 @@
 
 ## 安装
 
+vue2:
+
 ```
 $ npm install --save vant@latest-v2
 $ npm install --save @vue/composition-api @formily/vant
