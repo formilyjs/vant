@@ -39,7 +39,7 @@ module.exports = {
       },
       {
         text: 'GITHUB',
-        link: 'https://github.com/alibaba/formily',
+        link: 'https://github.com/formilyjs/vant',
       },
     ],
     sidebar: {
