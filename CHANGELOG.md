@@ -1,5 +1,19 @@
 # Changelog
 
+## v1.0.0-beta.7(2022-02-23)
+
+### :bug: Bug Fixes
+
+1. [fix: lint](https://github.com/formilyjs/vant/commit/c74bea2) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
+### :memo: Documents Changes
+
+1. [docs: change README.md](https://github.com/formilyjs/vant/commit/8fdebe6) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
+### :blush: Other Changes
+
+1. [chore: vuepress plugin theme update](https://github.com/formilyjs/vant/commit/b3cb018) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
 ## v1.0.0-beta.6(2022-02-22)
 
 ### :memo: Documents Changes
