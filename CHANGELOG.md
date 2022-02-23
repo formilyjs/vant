@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0-beta.8(2022-02-23)
+
+### :memo: Documents Changes
+
+1. [docs: change README.md](https://github.com/formilyjs/vant/commit/a5d18e2) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
 ## v1.0.0-beta.7(2022-02-23)
 
 ### :bug: Bug Fixes
