@@ -208,7 +208,9 @@
       />
     </SchemaField>
 
-    <Submit :style="{ 'margin-top': '16px' }" round block> 提交 </Submit>
+    <Submit :style="{ 'margin-top': '16px' }" round block>
+      提交
+    </Submit>
   </Form>
 </template>
 
