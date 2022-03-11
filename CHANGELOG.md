@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.0.0-beta.10(2022-03-11)
+
+### :bug: Bug Fixes
+
+1. [fix: component-props,decorator-props label -> props title](https://github.com/formilyjs/vant/commit/f08ce7e) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
+### :blush: Other Changes
+
+1. [chore: format](https://github.com/formilyjs/vant/commit/d5b98f0) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
 ## v1.0.0-beta.9(2022-02-23)
 
 ### :bug: Bug Fixes
