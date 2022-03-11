@@ -23,13 +23,13 @@ export default {
   data() {
     const schema = {
       type: 'object',
+      title: '城市',
       properties: {
         picker: {
           type: 'string',
           'x-component': 'Picker',
           'x-component-props': {
             formItemProps: {
-              label: '城市',
               placeholder: '选择城市',
             },
             popupProps: {},

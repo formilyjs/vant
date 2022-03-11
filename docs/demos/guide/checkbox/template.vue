@@ -1,6 +1,6 @@
 <template>
   <Form class="checkbox" :form="form">
-    <Field name="single" :component="[Checkbox, { label: '选项' }]" />
+    <Field name="single" title="选项" :component="[Checkbox]" />
     <ArrayField
       name="multiple"
       :dataSource="[

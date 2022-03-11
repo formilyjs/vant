@@ -11,13 +11,16 @@ export type FormItemProps = VanFormItemProps
 export const BaseFormItem = observer(
   defineComponent({
     name: 'FBaseFormItem',
+    props: {
+      label: {},
+    },
     setup(props, { attrs, slots, listeners }) {
       return () => {
         return h(
           VanFormItem,
           {
             class: { [`${stylePrefix}-input-asterisk`]: attrs.asterisk },
-            attrs,
+            attrs: { ...attrs, ...props },
             on: listeners,
           },
           {

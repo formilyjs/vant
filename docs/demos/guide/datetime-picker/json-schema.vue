@@ -26,10 +26,10 @@ export default {
       properties: {
         datetimePicker: {
           type: 'string',
+          title: '时间选择器',
           'x-component': 'DatetimePicker',
           'x-component-props': {
             formItemProps: {
-              label: '时间选择器',
               placeholder: '请选择时间',
             },
             popupProps: {},

@@ -2,11 +2,11 @@
   <Form :form="form">
     <Field
       name="cascader"
+      title="地区"
       :component="[
         Cascader,
         {
           formItemProps: {
-            label: '地区',
             placeholder: '请选择所在地区',
             format: (data) => {
               const { selectedOptions = [] } = data || {}

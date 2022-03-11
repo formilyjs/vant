@@ -3,10 +3,10 @@
     <SchemaField>
       <SchemaStringField
         name="area"
+        title="城市"
         x-component="Area"
         :x-component-props="{
           formItemProps: {
-            label: '城市',
             placeholder: '选择城市',
             format: (val) =>
               (val || [])

@@ -13,13 +13,16 @@ export type InputProps = VanInputProps
 export const BaseInput = observer(
   defineComponent({
     name: 'FBaseInput',
+    props: {
+      label: {},
+    },
     setup(props, { attrs, slots, listeners }) {
       return () => {
         return h(
           VanInput,
           {
             class: { [`${stylePrefix}-input-asterisk`]: attrs.asterisk },
-            attrs,
+            attrs: { ...attrs, ...props },
             on: listeners,
           },
           slots
@@ -30,7 +33,7 @@ export const BaseInput = observer(
 )
 
 export const inputValidate = mapProps<any>(
-  { validateStatus: true, required: true },
+  { validateStatus: true, title: 'label', required: true },
   (props, field) => {
     if (isVoidField(field)) return props
     if (!field) return props

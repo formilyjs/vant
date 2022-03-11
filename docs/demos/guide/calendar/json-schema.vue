@@ -26,10 +26,10 @@ export default {
       properties: {
         calendar: {
           type: 'string',
+          title: '日历',
           'x-component': 'Calendar',
           'x-component-props': {
             formItemProps: {
-              label: '日历',
               placeholder: '选择日历',
               format: (date) =>
                 date && `${date.getMonth() + 1}/${date.getDate()}`,

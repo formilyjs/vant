@@ -2,11 +2,11 @@
   <Form :form="form">
     <Field
       name="picker"
+      title="城市"
       :component="[
         Picker,
         {
           formItemProps: {
-            label: '城市',
             placeholder: '选择城市',
           },
           popupProps: {},

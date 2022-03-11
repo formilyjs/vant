@@ -2,11 +2,11 @@
   <Form :form="form">
     <Field
       name="datetimePicker"
+      title="时间选择器"
       :component="[
         DatetimePicker,
         {
           formItemProps: {
-            label: '时间选择器',
             placeholder: '请选择时间',
           },
           popupProps: {},

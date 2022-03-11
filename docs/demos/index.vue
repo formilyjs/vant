@@ -3,16 +3,16 @@
     <SchemaField>
       <SchemaStringField
         name="input"
+        title="输入框"
         x-component="Input"
-        :x-component-props="{ label: '输入框', placeholder: '请输入' }"
+        :x-component-props="{ placeholder: '请输入' }"
+        required
       />
 
       <SchemaStringField
         name="switch"
+        title="开关"
         x-decorator="FormItem"
-        :x-decorator-props="{
-          label: '开关',
-        }"
         x-component="Switch"
         :x-component-props="{
           size: 20,
@@ -21,22 +21,19 @@
 
       <SchemaStringField
         name="checkbox"
+        title="复选框"
         x-decorator="FormItem"
-        :x-decorator-props="{
-          label: '复选框',
-        }"
         x-component="Checkbox"
         :x-component-props="{
           shape: 'square',
         }"
+        required
       />
 
       <SchemaArrayField
         name="checkboxGroup"
+        title="复选框组"
         x-decorator="FormItem"
-        :x-decorator-props="{
-          label: '复选框组',
-        }"
         :enum="[
           { label: '复选框 1', name: 1, shape: 'square' },
           { label: '复选框 2', name: 2, shape: 'square' },
@@ -49,9 +46,10 @@
 
       <SchemaArrayField
         name="radio"
+        title="单选框"
         x-decorator="FormItem"
         :x-decorator-props="{
-          label: '单选框',
+          asterisk: true,
         }"
         :enum="[
           { label: '单选框 1', name: 1 },
@@ -61,50 +59,49 @@
         :x-component-props="{
           direction: 'horizontal',
         }"
+        :x-validator="{
+          validator(value) {
+            if (!value) return ''
+            return value === 1
+          },
+          message: '错误了',
+        }"
       />
 
       <SchemaStringField
         name="stepper"
+        title="步进器"
         x-decorator="FormItem"
-        :x-decorator-props="{
-          label: '步进器',
-        }"
         x-component="Stepper"
       />
 
       <SchemaStringField
         name="rate"
+        title="评分"
         x-decorator="FormItem"
-        :x-decorator-props="{
-          label: '评分',
-        }"
         x-component="Rate"
       />
 
       <SchemaStringField
         name="slider"
+        title="滑块"
         x-decorator="FormItem"
-        :x-decorator-props="{
-          label: '滑块',
-        }"
         x-component="Slider"
       />
 
       <SchemaStringField
         name="uploader"
+        title="文件上传"
         x-decorator="FormItem"
-        :x-decorator-props="{
-          label: '文件上传',
-        }"
         x-component="Uploader"
       />
 
       <SchemaStringField
         name="picker"
+        title="选择器"
         x-component="Picker"
         :x-component-props="{
           formItemProps: {
-            label: '选择器',
             placeholder: '点击选择城市',
           },
           pickerProps: {
@@ -120,14 +117,19 @@
             ],
           },
         }"
+        required
+        :x-validator="{
+          pattern: /湖州/,
+          message: '错误了',
+        }"
       />
 
       <SchemaStringField
         name="datetimePicker"
+        title="时间选择"
         x-component="DatetimePicker"
         :x-component-props="{
           formItemProps: {
-            label: '时间选择',
             placeholder: '点击选择时间',
           },
           popupProps: {},
@@ -142,10 +144,10 @@
 
       <SchemaStringField
         name="area"
+        title="地区选择"
         x-component="Area"
         :x-component-props="{
           formItemProps: {
-            label: '地区选择',
             placeholder: '点击选择省市区',
             format: (val) =>
               (val || [])
@@ -178,10 +180,10 @@
 
       <SchemaStringField
         name="calendar"
+        title="日历"
         x-component="Calendar"
         :x-component-props="{
           formItemProps: {
-            label: '日历',
             placeholder: '选择日历',
             format: (date) =>
               date && `${date.getMonth() + 1}/${date.getDate()}`,
@@ -193,9 +195,7 @@
       />
     </SchemaField>
 
-    <Submit :style="{ 'margin-top': '16px' }" round block>
-      提交
-    </Submit>
+    <Submit :style="{ 'margin-top': '16px' }" round block> 提交 </Submit>
   </Form>
 </template>
 

@@ -1,11 +1,7 @@
 <template>
   <Form class="checkbox" :form="form">
     <SchemaField>
-      <SchemaBooleanField
-        name="single"
-        x-component="Checkbox"
-        :x-component-props="{ label: '选项' }"
-      />
+      <SchemaBooleanField name="single" title="选项" x-component="Checkbox" />
       <SchemaArrayField
         name="multiple"
         :enum="[

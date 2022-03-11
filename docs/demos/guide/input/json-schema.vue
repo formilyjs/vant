@@ -17,16 +17,17 @@ const schema = {
   properties: {
     input: {
       type: 'string',
+      title: '输入框',
       'x-component': 'Input',
-      'x-component-props': { label: '输入框', placeholder: '请输入' },
+      'x-component-props': { placeholder: '请输入' },
     },
     textarea: {
       type: 'string',
+      title: '文本框',
       'x-component': 'Input',
       'x-component-props': {
         autosize: true,
         type: 'textarea',
-        label: '文本框',
         placeholder: '请输入',
       },
     },

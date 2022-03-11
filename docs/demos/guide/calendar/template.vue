@@ -2,11 +2,11 @@
   <Form :form="form">
     <Field
       name="calendar"
+      title="日历"
       :component="[
         Calendar,
         {
           formItemProps: {
-            label: '日历',
             placeholder: '选择日历',
             format: (date) =>
               date && `${date.getMonth() + 1}/${date.getDate()}`,

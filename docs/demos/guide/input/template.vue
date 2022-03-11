@@ -3,7 +3,7 @@
     <Field
       name="input"
       title="输入框"
-      :component="[Input, { label: '输入框', placeholder: '请输入' }]"
+      :component="[Input, { placeholder: '请输入' }]"
     />
     <Field
       name="textarea"
@@ -13,7 +13,6 @@
         {
           autosize: true,
           type: 'textarea',
-          label: '文本框',
           placeholder: '请输入',
         },
       ]"

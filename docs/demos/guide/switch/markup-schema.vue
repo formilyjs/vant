@@ -12,12 +12,13 @@
 <script>
 import { createForm } from '@formily/core'
 import { createSchemaField } from '@formily/vue'
-import { Switch, Submit, Form } from '@formily/vant'
+import { Switch, FormItem, Submit, Form } from '@formily/vant'
 
 const form = createForm()
 const fields = createSchemaField({
   components: {
     Switch,
+    FormItem,
   },
 })
 

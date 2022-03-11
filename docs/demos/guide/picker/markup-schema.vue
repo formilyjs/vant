@@ -3,10 +3,10 @@
     <SchemaField>
       <SchemaStringField
         name="picker"
+        title="城市"
         x-component="Picker"
         :x-component-props="{
           formItemProps: {
-            label: '城市',
             placeholder: '选择城市',
           },
           popupProps: {},

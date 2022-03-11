@@ -17,8 +17,8 @@ const schema = {
   properties: {
     single: {
       type: 'boolean',
+      title: '选项',
       'x-component': 'Checkbox',
-      'x-component-props': { label: '选项' },
     },
     multiple: {
       type: 'array',

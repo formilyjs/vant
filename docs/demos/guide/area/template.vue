@@ -2,6 +2,7 @@
   <Form :form="form">
     <Field
       name="area"
+      title="城市"
       :component="[
         Area,
         {
@@ -11,7 +12,6 @@
                 .filter((item) => !!item)
                 .map((item) => item && item.name)
                 .join('/'),
-            label: '城市',
             placeholder: '选择城市',
           },
           popupProps: {},

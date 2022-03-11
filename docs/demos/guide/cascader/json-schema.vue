@@ -26,10 +26,10 @@ export default {
       properties: {
         cascader: {
           type: 'string',
+          title: '地区',
           'x-component': 'Cascader',
           'x-component-props': {
             formItemProps: {
-              label: '地区',
               placeholder: '请选择所在地区',
               format: (data) => {
                 const { selectedOptions = [] } = data || {}
