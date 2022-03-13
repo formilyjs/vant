@@ -32,43 +32,48 @@ export const usePlaceholder = (value?: Ref<any>) => {
   return placeholder
 }
 
-const Input = defineComponent({
-  name: 'FPreviewTextInput',
-  props: ['value'],
-  setup(props, { attrs }) {
-    const value = toRef(props, 'value')
-    const placeholder = usePlaceholder(value)
-    return () => {
-      return h(
-        'div',
-        {
-          class: [prefixCls, `${stylePrefix}-preview-input`],
-          style: attrs.style,
-          attrs: {
-            ...attrs,
-            disabled: false,
+const Input = observer(
+  defineComponent({
+    name: 'FPreviewTextInput',
+    props: ['value'],
+    setup(props, { attrs }) {
+      const fieldRef = useField<Field>()
+      const field = fieldRef.value
+      const value = toRef(props, 'value')
+      const placeholder = usePlaceholder(value)
+      return () => {
+        return h(
+          'div',
+          {
+            class: [prefixCls, `${stylePrefix}-preview-input`],
+            style: attrs.style,
+            attrs: {
+              ...attrs,
+              ...props,
+              disabled: false,
+            },
           },
-        },
-        {
-          default: () => [
-            [
-              h(
-                'span',
-                {
-                  class: [`${stylePrefix}-preview-input-title`],
-                },
-                {
-                  default: () => [attrs.label],
-                }
-              ),
+          {
+            default: () => [
+              [
+                h(
+                  'span',
+                  {
+                    class: [`${stylePrefix}-preview-input-title`],
+                  },
+                  {
+                    default: () => [field.title],
+                  }
+                ),
+              ],
+              placeholder.value,
             ],
-            placeholder.value,
-          ],
-        }
-      )
-    }
-  },
-})
+          }
+        )
+      }
+    },
+  })
+)
 
 const Checkbox = observer(
   defineComponent({
