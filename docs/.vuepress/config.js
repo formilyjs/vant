@@ -38,6 +38,10 @@ module.exports = {
         link: 'https://v2.formilyjs.org',
       },
       {
+        text: 'CHANGELOG',
+        link: 'https://github.com/formilyjs/vant/blob/main/CHANGELOG.md',
+      },
+      {
         text: 'GITHUB',
         link: 'https://github.com/formilyjs/vant',
       },
