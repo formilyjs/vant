@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.0.0-beta.12(2022-03-13)
+
+### :tada: Enhancements
+
+1. [feat: add change log](https://github.com/formilyjs/vant/commit/cfeefa6) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
+## v1.0.0-beta.11(2022-03-13)
+
+### :bug: Bug Fixes
+
+1. [fix: previewText input title bug](https://github.com/formilyjs/vant/commit/75ec7ce) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
 ## v1.0.0-beta.10(2022-03-11)
 
 ### :bug: Bug Fixes
