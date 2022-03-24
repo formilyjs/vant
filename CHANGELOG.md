@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0-beta.13(2022-03-24)
+
+### :bug: Bug Fixes
+
+1. [fix: input showWordLimit parameter observer inactive](https://github.com/formilyjs/vant/commit/f6853c7) :point_right: ( [yaoleyaotouoO](https://github.com/yaoleyaotouoO) )
+
 ## v1.0.0-beta.12(2022-03-13)
 
 ### :tada: Enhancements
