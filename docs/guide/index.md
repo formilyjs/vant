@@ -6,6 +6,12 @@
 
 - 更丰富的组件体系
 
+  - 布局组件
+
+    - FormItem
+    - Space
+    - Submit
+
   - 输入控件
     - Input
     - Radio
@@ -20,6 +26,8 @@
     - Picker
     - DatetimePicker
     - Area
+  - 场景组件
+    - ArrayItems
   - 阅读态组件
     - PreviewText
 
@@ -31,6 +39,8 @@
   - 提供了 PreviewText 组件，用户可以基于它自己做阅读态封装，灵活性更强
 - 类型更加友好
   - 每个组件都有着极其完整的类型定义，用户在实际开发过程中，可以感受到前所未有的智能提示体验
+- 更完备的布局控制能力
+  - 基于 FormItem 组件，提供更智能的布局能力。
 
 ## 安装
 
@@ -51,6 +61,6 @@ $ npm install --save @vue/composition-api @formily/vant
 
 答：如果是开源组件库，可以直接参与项目共建，提供 PR，如果是企业内私有组件库，参考源码即可，源码并没有太多复杂逻辑。
 
-问：为什么 ArrayCards/ArrayTable/FormStep 这类组件只支持 Schema 模式，不支持纯 Template 模式？
+<!-- 问：为什么 ArrayCards/ArrayTable/FormStep 这类组件只支持 Schema 模式，不支持纯 Template 模式？
 
-答：这就是 Schema 模式的核心优势，借助协议，我们可以做场景化抽象，相反，纯 Template 模式，受限于 Template 的不可解析性，我们很难做到 UI 级别的场景化抽象，更多的只是抽象 Hook。
+答：这就是 Schema 模式的核心优势，借助协议，我们可以做场景化抽象，相反，纯 Template 模式，受限于 Template 的不可解析性，我们很难做到 UI 级别的场景化抽象，更多的只是抽象 Hook。 -->

@@ -7,7 +7,7 @@ import {
 } from '../__builtins__/shared'
 import { Field } from '@formily/core'
 import { observer } from '@formily/reactive-vue'
-import { h, useField } from '@formily/vue'
+import { h, useField, useFieldSchema } from '@formily/vue'
 import { isArr, isValid, isEmpty } from '@formily/shared'
 import { stylePrefix } from '../__builtins__/configs'
 import { Space } from '../space'
@@ -325,6 +325,7 @@ const DatetimePicker = observer(
   defineComponent({
     name: 'FPreviewTextDatetimePicker',
     setup(props, { attrs }) {
+      const fieldRef = useFieldSchema()
       const { formItemProps = {} } = attrs as any
       const placeholder = usePlaceholder()
       return () => {
@@ -336,6 +337,7 @@ const DatetimePicker = observer(
             attrs: {
               ...formItemProps,
               disabled: false,
+              label: fieldRef.value.title || '',
             },
           },
           {
@@ -351,8 +353,25 @@ const Calendar = observer(
   defineComponent({
     name: 'FPreviewTextCalendar',
     setup(props, { attrs }) {
+      const fieldRef = useFieldSchema()
       const { formItemProps = {} } = attrs as any
       const placeholder = usePlaceholder()
+      const initTime = function (val) {
+        const d = new Date(val)
+        const dateTime =
+          d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate()
+        return dateTime
+      }
+      const getSelected = function () {
+        const attrsVal = attrs.value
+        let selText = ''
+        if (attrsVal) {
+          selText = isArr(attrsVal)
+            ? `${initTime(attrsVal[0])} - ${initTime(attrsVal[1])}`
+            : initTime(attrsVal)
+        }
+        return selText || placeholder.value
+      }
       return () => {
         return h(
           VanInput,
@@ -362,10 +381,11 @@ const Calendar = observer(
             attrs: {
               ...formItemProps,
               disabled: false,
+              label: fieldRef.value.title || '',
             },
           },
           {
-            input: () => attrs.value || placeholder.value,
+            input: () => getSelected(),
           }
         )
       }
@@ -377,8 +397,17 @@ const Cascader = observer(
   defineComponent({
     name: 'FPreviewTextCascader',
     setup(props, { attrs }) {
+      const fieldRef = useFieldSchema()
       const { formItemProps = {} } = attrs as any
       const placeholder = usePlaceholder()
+      const getSelected = function () {
+        const attrsVal: any = attrs?.value
+        let selText = ''
+        if (attrsVal && attrsVal.selectedOptions) {
+          selText = attrsVal.selectedOptions.map((item) => item.text).join('/')
+        }
+        return selText || placeholder.value
+      }
       return () => {
         return h(
           VanInput,
@@ -388,10 +417,11 @@ const Cascader = observer(
             attrs: {
               ...formItemProps,
               disabled: false,
+              label: fieldRef.value.title || '',
             },
           },
           {
-            input: () => attrs.value || placeholder.value,
+            input: () => getSelected(),
           }
         )
       }
