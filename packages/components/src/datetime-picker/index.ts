@@ -1,6 +1,6 @@
 import { observer } from '@formily/reactive-vue'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
-import { ref, defineComponent } from '@vue/composition-api'
+import { ref, defineComponent } from 'vue-demi'
 import type { DatetimePicker as VanDatetimePickerProps } from 'vant'
 import { DatetimePicker as VanDatetimePicker } from 'vant'
 import { Popup as VanPopup } from 'vant'

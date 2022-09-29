@@ -1,6 +1,6 @@
 import { observer } from '@formily/reactive-vue'
 import { connect, h } from '@formily/vue'
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from 'vue-demi'
 import type { Field as VanFormItemProps } from 'vant'
 import { Field as VanFormItem } from 'vant'
 import { stylePrefix } from '../__builtins__/configs'

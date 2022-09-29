@@ -1,6 +1,6 @@
 import { Submit } from '../submit'
 import { render } from '@testing-library/vue'
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from 'vue-demi'
 import { FormProvider, Field } from '@formily/vue'
 import { createForm } from '@formily/core'
 

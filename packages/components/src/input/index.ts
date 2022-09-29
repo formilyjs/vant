@@ -1,7 +1,7 @@
 import { observer } from '@formily/reactive-vue'
 import { isVoidField } from '@formily/core'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from 'vue-demi'
 import type { Field as VanInputProps } from 'vant'
 import { Field as VanInput } from 'vant'
 import { transformComponent } from '../__builtins__/shared'

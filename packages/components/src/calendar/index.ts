@@ -1,6 +1,6 @@
 import { observer } from '@formily/reactive-vue'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
-import { ref, defineComponent } from '@vue/composition-api'
+import { ref, defineComponent } from 'vue-demi'
 import type { Calendar as VanCalendarProps } from 'vant'
 import { Calendar as VanCalendar } from 'vant'
 import FormItem from '../form-item'

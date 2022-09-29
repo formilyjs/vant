@@ -1,7 +1,7 @@
 import { transformComponent } from '../__builtins__/shared'
 import { observer } from '@formily/reactive-vue'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from 'vue-demi'
 import type { Uploader as VanUploaderProps } from 'vant'
 import { Uploader as VanUploader } from 'vant'
 import { PreviewText } from '../preview-text'

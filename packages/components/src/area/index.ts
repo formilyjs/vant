@@ -1,6 +1,6 @@
 import { observer } from '@formily/reactive-vue'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
-import { ref, defineComponent } from '@vue/composition-api'
+import { ref, defineComponent } from 'vue-demi'
 import { Popup as VanPopup } from 'vant'
 import { Area as VanArea } from 'vant'
 import { PreviewText } from '../preview-text'
