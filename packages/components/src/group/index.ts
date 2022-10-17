@@ -7,8 +7,8 @@ export type CellGroupProps = VanCellGroupProps
 
 export const Group = defineComponent<CellGroupProps>({
   name: 'FCellGroup',
-  setup(props, { slots }) {
-    return () => h(VanCellGroup, { props: { inset: true, ...props } }, slots)
+  setup(props, { attrs, slots }) {
+    return () => h(VanCellGroup, { props: { inset: true, ...attrs } }, slots)
   },
 })
 
