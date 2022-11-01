@@ -7,7 +7,7 @@ const componentFiles = utils
   .filter((item) => !['index'].includes(item))
 
 module.exports = {
-  title: 'Formily Van',
+  title: 'Formily Vant',
   dest: './doc-site',
   theme: '@vuepress-dumi/dumi',
   head: [
