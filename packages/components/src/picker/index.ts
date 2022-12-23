@@ -13,17 +13,16 @@ const BasePicker = observer(
   defineComponent({
     name: 'FBasePicker',
     setup(props, { attrs, emit, slots }) {
-      const {
-        formItemProps = {},
-        popupProps = {},
-        pickerProps = {},
-        fieldListeners = {},
-        popupListeners = {},
-        pickerListeners = {},
-      } = attrs as any
       const show = ref(false)
-
       return () => {
+        const {
+          formItemProps = {},
+          popupProps = {},
+          pickerProps = {},
+          fieldListeners = {},
+          popupListeners = {},
+          pickerListeners = {},
+        } = attrs as any
         return h(
           'div',
           {},

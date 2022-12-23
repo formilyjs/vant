@@ -32,11 +32,22 @@ const ArrayItemsInner = observer(
         const dataSource = Array.isArray(field.value) ? field.value.slice() : []
 
         const renderItems = () => {
-          const items = dataSource?.map((item, index) => {
+          return dataSource?.map((item, index) => {
             const items = Array.isArray(schema.items)
               ? schema.items[index] || schema.items[0]
               : schema.items
             const key = getKey(item, index)
+            const content = h(
+              RecursionField,
+              {
+                props: {
+                  schema: items,
+                  name: index,
+                },
+              },
+              {}
+            )
+
             return h(
               ArrayBase.Item,
               {
@@ -49,21 +60,19 @@ const ArrayItemsInner = observer(
               {
                 default: () =>
                   h(
-                    RecursionField,
+                    'div',
                     {
-                      props: {
-                        schema: items,
-                        name: index,
-                      },
+                      class: [`${prefixCls}-item`],
                     },
-                    {}
+                    {
+                      default: () => content,
+                    }
                   ),
               }
             )
           })
-
-          return h('div', {}, { default: () => items })
         }
+
         const renderAddition = () => {
           return schema.reduceProperties((addition, schema) => {
             if (isAdditionComponent(schema)) {
@@ -90,19 +99,7 @@ const ArrayItemsInner = observer(
             },
           },
           {
-            default: () =>
-              h(
-                'div',
-                {
-                  class: [prefixCls],
-                  on: {
-                    change: () => {},
-                  },
-                },
-                {
-                  default: () => [renderItems(), renderAddition()],
-                }
-              ),
+            default: () => [renderItems(), renderAddition()],
           }
         )
       }

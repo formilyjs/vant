@@ -13,17 +13,16 @@ const BaseDatetimePicker = observer(
   defineComponent({
     name: 'FBaseDatetimePicker',
     setup(props, { attrs, emit, slots }) {
-      const {
-        formItemProps = {},
-        popupProps = {},
-        datetimePickerProps = {},
-        fieldListeners = {},
-        popupListeners = {},
-        datetimePickerListeners = {},
-      } = attrs as any
       const show = ref(false)
-
       return () => {
+        const {
+          formItemProps = {},
+          popupProps = {},
+          datetimePickerProps = {},
+          fieldListeners = {},
+          popupListeners = {},
+          datetimePickerListeners = {},
+        } = attrs as any
         return h(
           'div',
           {},
