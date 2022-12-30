@@ -19,7 +19,7 @@ import {
 } from '@formily/antdv-designable'
 import { isArr, isFn, isStr } from '@designable/shared'
 import { defineComponent } from 'vue-demi'
-import { composeExport } from '@formily/antdv/esm/__builtins__'
+import { composeExport } from '@formily/vant/esm/__builtins__'
 import { Container } from '../../common/Container'
 import { AllLocales } from '../../locales'
 import type { DnFC } from '@formily/antdv-designable'

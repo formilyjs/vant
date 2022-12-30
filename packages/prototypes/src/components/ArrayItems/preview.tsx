@@ -9,7 +9,7 @@ import {
 import { ArrayBase } from '@formily/vant'
 import { observer } from '@formily/reactive-vue'
 import cls from 'classnames'
-import { composeExport } from '@formily/antdv/esm/__builtins__'
+import { composeExport } from '@formily/vant/esm/__builtins__'
 import { defineComponent } from 'vue-demi'
 import { uid } from '@designable/shared'
 import {

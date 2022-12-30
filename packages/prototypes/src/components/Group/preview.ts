@@ -1,6 +1,6 @@
 import { Group as FormilyGroup } from '@formily/vant'
 import { createBehavior, createResource } from '@designable/core'
-import { composeExport } from '@formily/antdv/esm/__builtins__'
+import { composeExport } from '@formily/vant/esm/__builtins__'
 import { withContainer } from '../../common/Container'
 import { createVoidFieldSchema } from '../Field'
 import { AllSchemas } from '../../schemas'

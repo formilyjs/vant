@@ -1,6 +1,6 @@
 import { Input as FormilyInput } from '@formily/vant'
 import { createBehavior, createResource } from '@designable/core'
-import { composeExport } from '@formily/antdv/esm/__builtins__'
+import { composeExport } from '@formily/vant/esm/__builtins__'
 import { createFieldSchema } from '../Field'
 import { AllSchemas } from '../../schemas'
 import { AllLocales } from '../../locales'

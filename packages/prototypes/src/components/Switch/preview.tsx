@@ -1,5 +1,5 @@
 import { Switch as FormilySwitch } from '@formily/vant'
-import { composeExport } from '@formily/antdv/esm/__builtins__'
+import { composeExport } from '@formily/vant/esm/__builtins__'
 import { createBehavior, createResource } from '@designable/core'
 import { createFieldSchema } from '../Field'
 import { AllSchemas } from '../../schemas'

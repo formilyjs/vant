@@ -16,9 +16,23 @@ export const DatetimePicker = {
         },
       },
     },
-    'en-US': {
-      title: 'DatetimePicker',
-      settings: {},
+  },
+  'en-US': {
+    title: 'DatetimePicker',
+    settings: {
+      'x-component-props': {
+        datetimePickerProps: {
+          // type: '时间类型',
+          title: 'Title',
+          confirmButtonText: 'Confirm button text',
+          cancelButtonText: 'Cancel button text',
+          // format: '格式',
+        },
+        formItemProps: {
+          placeholder: 'Placeholder',
+          // clearable: '是否启用清除图标',
+        },
+      },
     },
   },
 }
