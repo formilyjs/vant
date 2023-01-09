@@ -103,14 +103,14 @@ export const createFieldSchema = (
               clearable: true,
             },
           },
-          // description: {
-          //   type: 'string',
-          //   'x-decorator': 'FormItem',
-          //   'x-component': 'Input.TextArea',
-          //   'x-component-props': {
-          //     rows: 1,
-          //   },
-          // },
+          description: {
+            type: 'string',
+            'x-decorator': 'FormItem',
+            'x-component': 'Input.TextArea',
+            'x-component-props': {
+              rows: 1,
+            },
+          },
           'x-display': {
             default: 'visible',
             type: 'string',
@@ -195,18 +195,18 @@ export const createVoidFieldSchema = (
               },
             },
           },
-          // description: {
-          //   type: 'string',
-          //   'x-decorator': 'FormItem',
-          //   'x-component': 'Input.TextArea',
-          //   'x-reactions': {
-          //     fulfill: {
-          //       state: {
-          //         hidden: '{{$form.values["x-decorator"] === "FormItem"}}',
-          //       },
-          //     },
-          //   },
-          // },
+          description: {
+            type: 'string',
+            'x-decorator': 'FormItem',
+            'x-component': 'Input.TextArea',
+            'x-reactions': {
+              fulfill: {
+                state: {
+                  hidden: '{{$form.values["x-decorator"] === "FormItem"}}',
+                },
+              },
+            },
+          },
           'x-display': {
             default: 'visible',
             type: 'string',

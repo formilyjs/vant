@@ -12,14 +12,6 @@ export const Input: ISchema & { TextArea?: ISchema } = {
         size: 'small',
       },
     },
-    minlength: {
-      type: 'number',
-      'x-decorator': 'FormItem',
-      'x-component': 'InputNumber',
-      'x-component-props': {
-        size: 'small',
-      },
-    },
     'show-word-limit': {
       type: 'number',
       'x-decorator': 'FormItem',
@@ -42,46 +34,27 @@ export const Input: ISchema & { TextArea?: ISchema } = {
       'x-decorator': 'FormItem',
       'x-component': 'Switch',
     },
-    'prefix-icon': {
-      type: 'string',
-      'x-decorator': 'FormItem',
-      'x-component': 'Input',
-      'x-component-props': {
-        size: 'small',
-      },
-    },
-    'suffix-icon': {
-      type: 'string',
-      'x-decorator': 'FormItem',
-      'x-component': 'Input',
-      'x-component-props': {
-        size: 'small',
-      },
-    },
     autofocus: {
       type: 'boolean',
       'x-decorator': 'FormItem',
       'x-component': 'Switch',
     },
-    size: {
-      default: 'default',
+    type: {
       type: 'string',
-      enum: [
-        {
-          label: 'Large',
-          value: 'large',
-        },
-        {
-          label: 'Small',
-          value: 'small',
-        },
-        {
-          label: 'Default',
-          value: 'default',
-        },
-      ],
+      'x-decorator': 'FormItem',
+      'x-component': 'Input',
+      'x-component-props': {
+        size: 'small',
+      },
+    },
+    size: {
+      type: 'string',
+      enum: ['large', null],
       'x-decorator': 'FormItem',
       'x-component': 'Select',
+      'x-component-props': {
+        size: 'small',
+      },
     },
   },
 }

@@ -185,6 +185,6 @@ export const ArrayItems = composeExport(
     // MoveDown: ArrayBase.MoveDown,
     // MoveUp: ArrayBase.MoveUp,
     Remove: ArrayBase.Remove,
-    SortHandle: ArrayBase.SortHandle,
+    // SortHandle: ArrayBase.SortHandle,
   }
 )

@@ -48,48 +48,51 @@ export const Switch: ISchema = {
     //     clearable: true,
     //   },
     // },
-    // 'active-value': {
-    //   type: 'string|boolean|number',
-    //   'x-decorator': 'FormItem',
-    //   'x-component': 'ValueInput',
-    //   'x-component-props': {
-    //     exclude: ['EXPRESSION'],
-    //     size: 'small',
-    //     clearable: true,
-    //   },
-    // },
-    // 'inactive-value': {
-    //   type: 'string|boolean|number',
-    //   'x-decorator': 'FormItem',
-    //   'x-component': 'ValueInput',
-    //   'x-component-props': {
-    //     exclude: ['EXPRESSION'],
-    //     size: 'small',
-    //     clearable: true,
-    //   },
-    // },
-    // 'active-color': {
-    //   type: 'string|boolean|number',
-    //   'x-decorator': 'FormItem',
-    //   'x-component': 'ColorInput',
-    //   'x-component-props': {},
-    // },
-    // 'inactive-color': {
-    //   type: 'string|boolean|number',
-    //   'x-decorator': 'FormItem',
-    //   'x-component': 'ColorInput',
-    //   'x-component-props': {},
-    // },
-    autoFocus: {
-      type: 'boolean',
+    'active-value': {
+      type: 'string|boolean|number',
       'x-decorator': 'FormItem',
-      'x-component': 'Switch',
+      'x-component': 'ValueInput',
+      'x-component-props': {
+        exclude: ['EXPRESSION'],
+        size: 'small',
+        clearable: true,
+      },
     },
-    size: {
-      default: 'default',
-      type: 'string',
+    'inactive-value': {
+      type: 'string|boolean|number',
       'x-decorator': 'FormItem',
-      'x-component': 'Select',
+      'x-component': 'ValueInput',
+      'x-component-props': {
+        exclude: ['EXPRESSION'],
+        size: 'small',
+        clearable: true,
+      },
+    },
+    'active-color': {
+      default: '#1989fa',
+      type: 'string|boolean|number',
+      'x-decorator': 'FormItem',
+      'x-component': 'ColorInput',
+      'x-component-props': {},
+    },
+    'inactive-color': {
+      default: '#ffffff',
+      type: 'string|boolean|number',
+      'x-decorator': 'FormItem',
+      'x-component': 'ColorInput',
+      'x-component-props': {},
+    },
+    // autoFocus: {
+    //   type: 'boolean',
+    //   'x-decorator': 'FormItem',
+    //   'x-component': 'Switch',
+    // },
+    size: {
+      // default: 'default',
+      // type: 'string',
+      default: '30px',
+      'x-decorator': 'FormItem',
+      'x-component': 'SizeInput',
     },
   },
 }

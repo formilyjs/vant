@@ -36,7 +36,7 @@ export const FormLayout: ISchema = {
     },
     size: {
       type: 'string',
-      enum: ['large', 'small', 'default', null],
+      enum: ['large', null],
       'x-decorator': 'FormItem',
       'x-component': 'Select',
       // 'x-reactions': "{{(field) => { !field.value && field.setValue('default') }}}",

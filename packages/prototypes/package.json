@@ -2,8 +2,7 @@
   "name": "@formily/vant-prototypes",
   "version": "1.0.0-beta.14",
   "license": "MIT",
-  "main": "lib",
-  "types": "lib/index.d.ts",
+  "main": "src/index.ts",
   "engines": {
     "npm": ">=3.0.0"
   },

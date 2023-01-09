@@ -174,5 +174,5 @@ const Addition: ISchema = {
   },
 }
 
-// ArrayTable.Column = Column
-// ArrayTable.Addition = Addition
+ArrayBase.Column = Column
+ArrayBase.Addition = Addition

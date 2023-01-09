@@ -1,5 +1,3 @@
-import { ArrayTable } from './ArrayTable'
-import { Card } from './Card'
+import { ArrayBase } from './ArrayBase'
 
-export const ArrayItems = Card
-ArrayItems.Addition = ArrayTable.Addition
+export const ArrayItems = ArrayBase

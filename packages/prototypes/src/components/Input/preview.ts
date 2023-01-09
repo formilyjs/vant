@@ -18,15 +18,6 @@ export const Input: DnFC<Vue.Component<any, any, any, typeof FormilyInput>> =
         },
         designerLocales: AllLocales.Input,
       },
-      {
-        name: 'Input.TextArea',
-        extends: ['Field'],
-        selector: (node) => node.props['x-component'] === 'Input.TextArea',
-        designerProps: {
-          propsSchema: createFieldSchema(AllSchemas.Input.TextArea),
-        },
-        designerLocales: AllLocales.Input,
-      }
     ),
     Resource: createResource(
       {
@@ -44,22 +35,5 @@ export const Input: DnFC<Vue.Component<any, any, any, typeof FormilyInput>> =
           },
         ],
       },
-      {
-        icon: 'TextAreaSource',
-        elements: [
-          {
-            componentName: 'Field',
-            props: {
-              type: 'string',
-              title: 'TextArea',
-              // 'x-decorator': 'FormItem',
-              'x-component': 'Input',
-              'x-component-props': {
-                type: 'textarea',
-              },
-            },
-          },
-        ],
-      }
     ),
   })
