@@ -4,4 +4,7 @@ export const BuilderConfig: IBuilderConfig = {
   targetLibName: 'vant',
   targetLibCjsDir: 'lib',
   targetLibEsDir: 'es',
+  externals: {
+    vant: 'vant',
+  },
 }

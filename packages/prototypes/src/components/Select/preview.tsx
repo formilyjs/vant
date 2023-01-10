@@ -1,4 +1,4 @@
-import { Picker as FormilySelect } from '@formily/Vant'
+import { Picker as FormilySelect } from '@formily/vant'
 import { createBehavior, createResource } from '@designable/core'
 import { composeExport } from '@formily/vant/esm/__builtins__'
 import { createFieldSchema } from '../Field'

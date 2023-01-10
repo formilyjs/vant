@@ -43,5 +43,10 @@
     "@vue/composition-api": {
       "optional": true
     }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@designable/core": "^1.0.0-beta.25",
+    "@designable/shared": "^1.0.0-beta.25"
   }
 }
