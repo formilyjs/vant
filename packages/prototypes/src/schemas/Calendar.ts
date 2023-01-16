@@ -8,29 +8,56 @@ export const Calendar: ISchema & { RangePicker?: ISchema } = {
       'x-decorator': 'FormItem',
       'x-component': 'Input',
     },
-    // 'datetimePickerProps.type': {
-    //   type: 'string',
-    //   enum: [
-    //     { value: 'datetime', label: '年月日时分' },
-    //     { value: 'date', label: '年月日' },
-    //     { value: 'time', label: '时分' },
-    //     { value: 'year-month', label: '年月' },
-    //     { value: 'month-day', label: '月日' },
-    //     { value: 'datehour', label: '年月日时' },
-    //   ],
-    //   'x-decorator': 'FormItem',
-    //   'x-component': 'Select',
-    //   'x-component-props': {
-    //     size: 'small',
-    //     clearable: true,
-    //   },
-    // },
-    'datetimePickerProps.title': {
+    'calendarProps.title': {
       type: 'string',
       'x-decorator': 'FormItem',
       'x-component': 'Input',
     },
-    'datetimePickerProps.confirmButtonText': {
+    'calendarProps.defaultDate': {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'DatePicker',
+      'x-component-props': {
+        valueFormat: 'YYYY-MM-DDT00:00:00Z',
+        align: {
+          points: ['br', 'br'],
+        },
+      },
+    },
+    'calendarProps.minDate': {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'DatePicker',
+      'x-component-props': {
+        valueFormat: 'YYYY-MM-DDT00:00:00Z',
+        align: {
+          points: ['br', 'br'],
+        },
+      },
+    },
+    'calendarProps.maxDate': {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'DatePicker',
+      'x-component-props': {
+        valueFormat: 'YYYY-MM-DDT23:59:59Z',
+        align: {
+          points: ['br', 'br'],
+        },
+      },
+    },
+    'calendarProps.showConfirm': {
+      default: true,
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'Switch',
+    },
+    'calendarProps.confirmText': {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'Input',
+    },
+    'calendarProps.confirmDisabledText': {
       type: 'string',
       'x-decorator': 'FormItem',
       'x-component': 'Input',

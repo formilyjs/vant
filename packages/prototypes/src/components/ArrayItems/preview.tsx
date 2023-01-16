@@ -122,35 +122,29 @@ export const ArrayItems = composeExport(
               (name) => name.indexOf('ArrayItems.') === -1,
             ])
 
-
             return (
-              <ArrayBase {...{ disabled: true }}>
+              <ArrayBase disabled={true}>
                 <ArrayBase.Item index={0}>
-                  <div style="padding: 20px">
-                    <div
-                      key={uid()}
-                      attrs={{
-                        ...createNodeId(
-                          designer,
-                          ensureObjectItemsNode(node).id
-                        ),
-                      }}
-                    >
-                      {children.length ? (
-                        children.map((node) => (
-                          <TreeNodeWidget {...{ key: node.id }} node={node} />
-                        ))
-                      ) : (
-                        <DroppableWidget hasChildren={false} />
-                      )}
-                    </div>
+                  <div
+                    key={uid()}
+                    attrs={{
+                      ...createNodeId(designer, ensureObjectItemsNode(node).id),
+                    }}
+                  >
+                    {children.length ? (
+                      children.map((node) => (
+                        <TreeNodeWidget {...{ key: node.id }} node={node} />
+                      ))
+                    ) : (
+                      <DroppableWidget hasChildren={false} />
+                    )}
                   </div>
                   {/* TODO::some how cannot make it working */}
-                  <div style="text-align:center">
-                    {additions.map(() => {
-                      return <ArrayBase.Addition title="添加单项" />
-                    })}
-                  </div>
+                  {/* <div style="text-align:center"> */}
+                  {additions.map(() => {
+                    return <ArrayBase.Addition title="添加单项" />
+                  })}
+                  {/* </div> */}
                 </ArrayBase.Item>
               </ArrayBase>
             )
@@ -174,6 +168,7 @@ export const ArrayItems = composeExport(
           componentName: 'Field',
           props: {
             type: 'array',
+            'x-decorator': 'FormItem',
             'x-component': 'ArrayItems',
           },
         },

@@ -1,5 +1,5 @@
 export * from './Area'
-export * from './ArrayItem'
+export * from './ArrayItems'
 export * from './ArrayBase'
 export * from './Cascader'
 export * from './Calendar'
