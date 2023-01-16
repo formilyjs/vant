@@ -2,10 +2,10 @@
 
 import { defineComponent } from 'vue-demi'
 import { h } from '@formily/vue'
-import { stylePrefix } from '../__builtins__/configs'
+import { stylePrefix } from '../__builtins__'
+import { useFormLayout } from '../form-layout'
 
 import type { VNode } from 'vue'
-import { useFormLayout } from '../form-layout'
 
 export type SpaceProps = {
   size: 'small' | 'middle' | 'large' | number

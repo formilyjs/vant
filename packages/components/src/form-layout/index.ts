@@ -8,7 +8,7 @@ import {
   watch,
 } from 'vue-demi'
 import { h } from '@formily/vue'
-import { stylePrefix } from '../__builtins__/configs'
+import { stylePrefix } from '../__builtins__'
 import { useResponsiveFormLayout } from './useResponsiveFormLayout'
 
 export type FormLayoutProps = {
@@ -79,6 +79,7 @@ export const useFormLayout = (): Ref<FormLayoutProps> => {
 
 export const FormLayout = defineComponent<FormLayoutProps>({
   name: 'FFormLayout',
+  inheritAttrs: true,
   props: {
     className: {},
     colon: { default: true },
@@ -148,6 +149,7 @@ export const FormLayout = defineComponent<FormLayoutProps>({
         {
           ref: 'root',
           class: classNames,
+          style: 'color: ref;',
         },
         slots
       )

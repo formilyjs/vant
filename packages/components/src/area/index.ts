@@ -1,9 +1,9 @@
+import { ref, defineComponent } from 'vue-demi'
 import { observer } from '@formily/reactive-vue'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
-import { ref, defineComponent } from 'vue-demi'
 import { Popup as VanPopup, Area as VanArea } from 'vant'
 import { PreviewText } from '../preview-text'
-import FormItem from '../form-item'
+import { FormItem } from '../form-item'
 
 const BaseArea = observer(
   defineComponent({

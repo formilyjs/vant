@@ -1,16 +1,8 @@
 import { defineComponent, computed, toRef, Ref } from 'vue-demi'
-import {
-  createContext,
-  resolveComponent,
-  useContext,
-  composeExport,
-} from '../__builtins__/shared'
 import { Field } from '@formily/core'
+import { isArr, isValid, isEmpty } from '@formily/shared'
 import { observer } from '@formily/reactive-vue'
 import { h, useField, useFieldSchema } from '@formily/vue'
-import { isArr, isValid, isEmpty } from '@formily/shared'
-import { stylePrefix } from '../__builtins__/configs'
-import { Space } from '../space'
 import {
   Switch as VanSwitch,
   Rate as VanRate,
@@ -18,6 +10,14 @@ import {
   Tag,
   Field as VanInput,
 } from 'vant'
+import {
+  createContext,
+  resolveComponent,
+  useContext,
+  composeExport,
+  stylePrefix,
+} from '../__builtins__'
+import { Space } from '../space'
 
 const prefixCls = `${stylePrefix}-preview-text`
 const PlaceholderContext = createContext('N/A')

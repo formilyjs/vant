@@ -1,7 +1,8 @@
-import { h } from '@formily/vue'
-import type { CellGroup as VanCellGroupProps } from 'vant'
-import { CellGroup as VanCellGroup } from 'vant'
 import { defineComponent } from 'vue-demi'
+import { h } from '@formily/vue'
+import { CellGroup as VanCellGroup } from 'vant'
+
+import type { CellGroup as VanCellGroupProps } from 'vant'
 
 export type CellGroupProps = VanCellGroupProps
 

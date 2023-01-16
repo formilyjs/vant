@@ -1,10 +1,11 @@
+import { defineComponent } from 'vue-demi'
 import { observer } from '@formily/reactive-vue'
 import { connect, h } from '@formily/vue'
-import { defineComponent } from 'vue-demi'
-import type { Field as VanFormItemProps } from 'vant'
 import { Field as VanFormItem } from 'vant'
-import { stylePrefix } from '../__builtins__/configs'
+import { stylePrefix } from '../__builtins__'
 import { inputValidate } from '../input'
+
+import type { Field as VanFormItemProps } from 'vant'
 
 export type FormItemProps = VanFormItemProps
 

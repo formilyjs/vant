@@ -1,9 +1,10 @@
+import { defineComponent } from 'vue-demi'
 import { Form as FormType, IFormFeedback } from '@formily/core'
 import { FormProvider as _FormProvider, h, useForm } from '@formily/vue'
-import { defineComponent } from 'vue-demi'
 import { FormLayout, FormLayoutProps } from '../form-layout'
 import { PreviewText } from '../preview-text'
-import { Component, VNode } from 'vue'
+
+import type{ Component, VNode } from 'vue'
 
 const FormProvider = _FormProvider as unknown as Component
 
@@ -52,6 +53,7 @@ export const Form = defineComponent<FormProps>({
                   attrs: {
                     ...attrs,
                   },
+                  class: { '123': true },
                 },
                 {
                   default: () => [

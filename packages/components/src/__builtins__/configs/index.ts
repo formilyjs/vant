@@ -1,1 +1,1 @@
-export const stylePrefix = 'formily-vant'
+export const stylePrefix = 'van-formily'

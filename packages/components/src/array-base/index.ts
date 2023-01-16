@@ -9,15 +9,14 @@ import {
   onBeforeUnmount,
   PropType,
 } from 'vue-demi'
-import { Fragment, useField, useFieldSchema, h } from '@formily/vue'
 import { isValid, uid, clone } from '@formily/shared'
 import { ArrayField } from '@formily/core'
-import { stylePrefix } from '../__builtins__/configs'
+import { Fragment, useField, useFieldSchema, h } from '@formily/vue'
+import { Button, Icon } from 'vant'
+import { composeExport, stylePrefix } from '../__builtins__'
 
 import type { Button as ButtonProps } from 'vant'
-import { Button, Icon } from 'vant'
 import type { Schema } from '@formily/json-schema'
-import { composeExport } from '../__builtins__/shared'
 
 export interface IArrayBaseAdditionProps extends ButtonProps {
   title?: string
@@ -232,7 +231,7 @@ const ArrayBaseAddition = defineComponent({
           },
         },
         {
-          default: () => [self.value.title || props.title],
+          default: () => [props.title || self.value.title],
         }
       )
     }

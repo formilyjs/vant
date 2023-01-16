@@ -1,11 +1,12 @@
+import { ref, defineComponent } from 'vue-demi'
 import { observer } from '@formily/reactive-vue'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
-import { ref, defineComponent } from 'vue-demi'
-import type { Cascader as VanCascaderProps } from 'vant'
 import { Cascader as VanCascader } from 'vant'
 import { Popup as VanPopup } from 'vant'
-import FormItem from '../form-item'
+import { FormItem } from '../form-item'
 import { PreviewText } from '../preview-text'
+
+import type { Cascader as VanCascaderProps } from 'vant'
 
 export type CascaderProps = VanCascaderProps
 

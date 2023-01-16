@@ -1,10 +1,10 @@
-import { h, useParentForm } from '@formily/vue'
-import { IFormFeedback } from '@formily/core'
-import { observer } from '@formily/reactive-vue'
 import { defineComponent } from 'vue-demi'
+import { IFormFeedback } from '@formily/core'
+import { h, useParentForm } from '@formily/vue'
+import { observer } from '@formily/reactive-vue'
+import { Button as VanButton } from 'vant'
 
 import type { Button as VanButtonProps } from 'vant'
-import { Button as VanButton } from 'vant'
 
 export interface ISubmitProps extends VanButtonProps {
   onClick?: (e: MouseEvent) => any

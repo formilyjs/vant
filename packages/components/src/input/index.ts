@@ -1,13 +1,16 @@
-import { observer } from '@formily/reactive-vue'
-import { isVoidField } from '@formily/core'
-import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { defineComponent } from 'vue-demi'
-import type { Field as VanInputProps } from 'vant'
+import { isVoidField } from '@formily/core'
+import { observer } from '@formily/reactive-vue'
+import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { Field as VanInput } from 'vant'
-import { transformComponent } from '../__builtins__/shared'
-import { resolveComponent } from '../__builtins__/shared'
-import { stylePrefix } from '../__builtins__/configs'
+import {
+  transformComponent,
+  resolveComponent,
+  stylePrefix,
+} from '../__builtins__'
 import { PreviewText } from '../preview-text'
+
+import type { Field as VanInputProps } from 'vant'
 
 export type InputProps = VanInputProps
 

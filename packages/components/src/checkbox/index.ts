@@ -1,16 +1,17 @@
-import { connect, mapProps, h, mapReadPretty } from '@formily/vue'
 import { defineComponent } from 'vue-demi'
-import {
-  composeExport,
-  transformComponent,
-  resolveComponent,
-} from '../__builtins__/shared'
-import type { CheckboxGroup as VanCheckboxGroupProps } from 'vant'
+import { connect, mapProps, h, mapReadPretty } from '@formily/vue'
 import {
   Checkbox as VanCheckbox,
   CheckboxGroup as VanCheckboxGroup,
 } from 'vant'
+import {
+  composeExport,
+  transformComponent,
+  resolveComponent,
+} from '../__builtins__'
 import { PreviewText } from '../preview-text'
+
+import type { CheckboxGroup as VanCheckboxGroupProps } from 'vant'
 
 const TransformVanCheckbox = transformComponent(VanCheckbox, {
   change: 'input',

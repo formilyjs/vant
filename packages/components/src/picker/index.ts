@@ -1,11 +1,11 @@
+import { ref, defineComponent } from 'vue-demi'
 import { observer } from '@formily/reactive-vue'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
-import { ref, defineComponent } from 'vue-demi'
-import type { Picker as VanPickerProps } from 'vant'
-import { Picker as VanPicker } from 'vant'
-import { Popup as VanPopup } from 'vant'
-import FormItem from '../form-item'
+import { Picker as VanPicker, Popup as VanPopup } from 'vant'
+import { FormItem } from '../form-item'
 import { PreviewText } from '../preview-text'
+
+import type { Picker as VanPickerProps } from 'vant'
 
 export type PickerProps = VanPickerProps
 

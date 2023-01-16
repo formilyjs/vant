@@ -1,16 +1,17 @@
-import { connect, mapProps, h, mapReadPretty } from '@formily/vue'
 import { defineComponent, PropType } from 'vue-demi'
+import { connect, mapProps, h, mapReadPretty } from '@formily/vue'
+import { Radio as VanRadio, RadioGroup as VanRadioGroup } from 'vant'
 import {
   composeExport,
   transformComponent,
   resolveComponent,
-} from '../__builtins__/shared'
+} from '../__builtins__'
 import { PreviewText } from '../preview-text'
+
 import type {
   Radio as VanRadioProps,
   RadioGroup as VanRadioGroupProps,
 } from 'vant'
-import { Radio as VanRadio, RadioGroup as VanRadioGroup } from 'vant'
 
 export type RadioGroupProps = VanRadioGroupProps & {
   value: any

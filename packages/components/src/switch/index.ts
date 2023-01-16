@@ -1,8 +1,9 @@
-import { transformComponent } from '../__builtins__/shared'
 import { connect, mapProps, mapReadPretty } from '@formily/vue'
-import type { Switch as VanSwitchProps } from 'vant'
 import { Switch as VanSwitch } from 'vant'
+import { transformComponent } from '../__builtins__'
 import { PreviewText } from '../preview-text'
+
+import type { Switch as VanSwitchProps } from 'vant'
 
 export type SwitchProps = VanSwitchProps
 

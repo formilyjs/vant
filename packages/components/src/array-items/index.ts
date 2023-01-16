@@ -3,10 +3,9 @@ import { ArrayField } from '@formily/core'
 import { useField, useFieldSchema, RecursionField, h } from '@formily/vue'
 import { observer } from '@formily/reactive-vue'
 import { ISchema } from '@formily/json-schema'
-import { stylePrefix } from '../__builtins__/configs'
-import { ArrayBase } from '../array-base'
-import { composeExport } from '../__builtins__/shared'
 import { CellGroup } from 'vant'
+import { composeExport, stylePrefix } from '../__builtins__'
+import { ArrayBase } from '../array-base'
 
 const isAdditionComponent = (schema: ISchema) => {
   return schema['x-component']?.indexOf('Addition') > -1
@@ -61,9 +60,7 @@ const ArrayItemsInner = observer(
                 default: () =>
                   h(
                     'div',
-                    {
-                      class: [`${prefixCls}-item`],
-                    },
+                    {},
                     {
                       default: () => content,
                     }
@@ -99,7 +96,19 @@ const ArrayItemsInner = observer(
             },
           },
           {
-            default: () => [renderItems(), renderAddition()],
+            default: () =>
+              h(
+                'div',
+                {
+                  class: [prefixCls],
+                  on: {
+                    change: () => {},
+                  },
+                },
+                {
+                  default: () => [renderItems(), renderAddition()],
+                }
+              ),
           }
         )
       }
