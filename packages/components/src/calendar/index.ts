@@ -24,6 +24,41 @@ const BaseCalendar = observer(
         } = attrs as any
         const { format } = formItemProps
 
+        // minDate/maxDate/defaultValue 置换 string/number 至 Date 类型
+        // 注意字段时间格式兼容问题
+        if (
+          'minDate' in calendarProps &&
+          (typeof calendarProps.minDate === 'string' ||
+            typeof calendarProps.minDate === 'number')
+        ) {
+          calendarProps.minDate = new Date(calendarProps.minDate)
+        }
+        if (
+          'maxDate' in calendarProps &&
+          (typeof calendarProps.maxDate === 'string' ||
+            typeof calendarProps.maxDate === 'number')
+        ) {
+          calendarProps.maxDate = new Date(calendarProps.maxDate)
+        }
+
+        if ('defaultValue' in calendarProps) {
+          if (Array.isArray(calendarProps.defaultValue)) {
+            calendarProps.defaultValue = calendarProps.defaultValue.map(
+              (value) => {
+                if (typeof value === 'string' || typeof value === 'number') {
+                  return new Date(value)
+                }
+                return value
+              }
+            )
+          } else if (
+            typeof calendarProps.defaultValue === 'string' ||
+            typeof calendarProps.defaultValue === 'number'
+          ) {
+            calendarProps.minDate = new Date(calendarProps.defaultValue)
+          }
+        }
+
         return h(
           'div',
           {},
