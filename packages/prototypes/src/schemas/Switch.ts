@@ -3,59 +3,12 @@ import type { ISchema } from '@formily/vue'
 export const Switch: ISchema = {
   type: 'object',
   properties: {
-    // width: {
-    //   type: 'string',
-    //   'x-decorator': 'FormItem',
-    //   'x-component': 'InputNumber',
-    //   'x-component-props': {
-    //     size: 'small',
-    //     clearable: true,
-    //   },
-    // },
-    // 'active-icon-class': {
-    //   type: 'string',
-    //   'x-decorator': 'FormItem',
-    //   'x-component': 'Input',
-    //   'x-component-props': {
-    //     size: 'small',
-    //     clearable: true,
-    //   },
-    // },
-    // 'inactive-icon-class': {
-    //   type: 'string',
-    //   'x-decorator': 'FormItem',
-    //   'x-component': 'Input',
-    //   'x-component-props': {
-    //     size: 'small',
-    //     clearable: true,
-    //   },
-    // },
-    // 'active-text': {
-    //   type: 'string',
-    //   'x-decorator': 'FormItem',
-    //   'x-component': 'Input',
-    //   'x-component-props': {
-    //     size: 'small',
-    //     clearable: true,
-    //   },
-    // },
-    // 'inactive-text': {
-    //   type: 'string',
-    //   'x-decorator': 'FormItem',
-    //   'x-component': 'Input',
-    //   'x-component-props': {
-    //     size: 'small',
-    //     clearable: true,
-    //   },
-    // },
     'active-value': {
       type: 'string|boolean|number',
       'x-decorator': 'FormItem',
       'x-component': 'ValueInput',
       'x-component-props': {
         exclude: ['EXPRESSION'],
-        size: 'small',
-        clearable: true,
       },
     },
     'inactive-value': {
@@ -64,35 +17,28 @@ export const Switch: ISchema = {
       'x-component': 'ValueInput',
       'x-component-props': {
         exclude: ['EXPRESSION'],
-        size: 'small',
-        clearable: true,
       },
     },
     'active-color': {
-      default: '#1989fa',
       type: 'string|boolean|number',
       'x-decorator': 'FormItem',
       'x-component': 'ColorInput',
       'x-component-props': {},
     },
     'inactive-color': {
-      default: '#ffffff',
       type: 'string|boolean|number',
       'x-decorator': 'FormItem',
       'x-component': 'ColorInput',
       'x-component-props': {},
     },
-    // autoFocus: {
-    //   type: 'boolean',
-    //   'x-decorator': 'FormItem',
-    //   'x-component': 'Switch',
-    // },
     size: {
-      // default: 'default',
-      // type: 'string',
-      default: '30px',
+      type: 'string|number',
+      default: '24px',
       'x-decorator': 'FormItem',
       'x-component': 'SizeInput',
+      'x-component-props': {
+        include: ['px'],
+      },
     },
   },
 }

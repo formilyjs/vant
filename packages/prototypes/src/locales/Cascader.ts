@@ -1,39 +1,28 @@
-export const Cascader = {
+import { createLocales } from '@designable/core'
+import { FormItemProps } from './FormItem'
+
+export const Cascader = createLocales(FormItemProps, {
   'zh-CN': {
     title: '联级选择',
     settings: {
       'x-component-props': {
-        props: '属性',
-        size: {
-          title: '尺寸',
-          dataSource: [
-            {
-              label: '大',
-              value: 'large',
-            },
-            {
-              label: '小',
-              value: 'small',
-            },
-            {
-              label: '默认',
-              value: 'default',
-            },
-          ],
+        cascaderProps: {
+          title: '标题',
+          'active-color': '激活状态颜色',
+          clearable: '可以清空',
+          'show-header': '展示标题栏',
+          'field-names': {
+            title: '自定义字段',
+            tooltip: '自定义 options 结构中的字段',
+          },
         },
-        'show-all-levels': {
-          title: '路径',
-          tooltip: '输入框中是否显示选中值的完整路径',
+        formItemProps: {
+          placeholder: '占位提示',
+          format: {
+            title: '格式',
+            tooltip: '显示渲染函数，格式：(data)=>string',
+          },
         },
-        'collapse-tags': {
-          title: '折叠标签',
-          tooltip: '多选模式下是否折叠Tag',
-        },
-        separator: '选项分隔符',
-        debounce: '去抖延迟',
-        'before-filter': '筛选之前钩子',
-        'popper-class': '自定义浮层类名',
-        'filter-method': '过滤钩子',
       },
     },
   },
@@ -41,21 +30,24 @@ export const Cascader = {
     title: 'Cascader',
     settings: {
       'x-component-props': {
-        changeOnSelect: {
-          title: 'Change On Select',
-          tooltip: 'Click on each level of menu option value will change',
+        cascaderProps: {
+          title: 'Title',
+          'active-color': 'Active color',
+          clearable: 'Clearable',
+          'show-header': 'Show header',
+          'field-names': {
+            title: 'Field name',
+            tooltip: 'Custom the fields of options',
+          },
         },
-        displayRender: {
-          title: 'Display Render',
-          tooltip:
-            'The rendering function displayed after selection, the default is label => label.join("/")	',
-        },
-        fieldNames: {
-          title: 'Field Names',
-          tooltip:
-            'Defaults：{ label: "label", value: "value", children: "children" }',
+        formItemProps: {
+          placeholder: 'Placeholder',
+          format: {
+            title: 'Format',
+            tooltip: 'Render function, Formatter: (data)=> string',
+          },
         },
       },
     },
   },
-}
+})

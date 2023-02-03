@@ -2,7 +2,9 @@ import { ref, defineComponent } from 'vue-demi'
 import { observer } from '@formily/reactive-vue'
 import { connect, mapProps, mapReadPretty, h } from '@formily/vue'
 import { Picker as VanPicker, Popup as VanPopup } from 'vant'
+import { stylePrefix } from '../__builtins__'
 import { FormItem } from '../form-item'
+import { useFormLayout } from '../form-layout'
 import { PreviewText } from '../preview-text'
 
 import type { Picker as VanPickerProps } from 'vant'
@@ -13,8 +15,12 @@ const BasePicker = observer(
   defineComponent({
     name: 'FBasePicker',
     setup(props, { attrs, emit, slots }) {
+      const deepLayoutRef = useFormLayout()
       const show = ref(false)
+
       return () => {
+        const deepLayout = deepLayoutRef.value
+
         const {
           formItemProps = {},
           popupProps = {},
@@ -23,16 +29,30 @@ const BasePicker = observer(
           popupListeners = {},
           pickerListeners = {},
         } = attrs as any
+        const {
+          format = (value) => {
+            const columns = pickerProps.columns || []
+            const selected = columns.find((column) => column.value === value)
+
+            return selected?.[pickerProps.valueKey || 'text']
+          },
+        } = pickerProps
+
         return h(
           'div',
-          {},
+          {
+            class: {
+              [`${stylePrefix}-picker`]: true,
+              [`${stylePrefix}-picker--bordered`]: deepLayout.border,
+            },
+          },
           {
             default: () => [
               h(
                 FormItem,
                 {
                   attrs: {
-                    value: attrs.value,
+                    value: format ? format(attrs.value) : attrs.value,
                     readonly: true,
                     clickable: true,
                     ...formItemProps,
@@ -75,8 +95,8 @@ const BasePicker = observer(
                           cancel: () => {
                             show.value = false
                           },
-                          confirm: (val) => {
-                            emit('change', val)
+                          confirm: ({ value }) => {
+                            emit('change', value)
                             show.value = false
                           },
                           ...pickerListeners,
@@ -97,7 +117,9 @@ const BasePicker = observer(
 
 export const Picker = connect(
   BasePicker,
-  mapProps({ readOnly: 'readonly' }),
+  mapProps({
+    dataSource: 'pickerProps.columns',
+  }),
   mapReadPretty(PreviewText.Picker)
 )
 

@@ -7,8 +7,7 @@ export const Group: ISchema = {
       type: 'string',
       'x-decorator': 'FormItem',
       'x-component': 'Input',
-    },
-    
+    },    
     border: {
       type: 'boolean',
       'x-decorator': 'FormItem',

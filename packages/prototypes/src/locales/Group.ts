@@ -11,7 +11,10 @@ export const Group = {
   'en-US': {
     title: 'Form Layout',
     settings: {
-      'x-component-props': {},
+      'x-component-props': {
+        border: 'Outer border',
+        title: 'Group title'
+      },
     },
   },
 }

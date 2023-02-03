@@ -5,25 +5,48 @@ export const Rate: ISchema = {
   properties: {
     count: {
       type: 'number',
+      default: 5,
       'x-decorator': 'FormItem',
       'x-component': 'InputNumber',
+      'x-component-props': {},
+    },
+    size: {
+      type: 'string',
+      default: '20px',
+      'x-decorator': 'FormItem',
+      'x-component': 'SizeInput',
       'x-component-props': {
-        defaultValue: 5,
+        include: ['px'],
       },
+    },
+    gutter: {
+      type: 'string',
+      default: '4px',
+      'x-decorator': 'FormItem',
+      'x-component': 'SizeInput',
+      'x-component-props': {
+        include: ['px'],
+      },
+    },
+    color: {
+      type: 'string',
+      default: '#ee0a24',
+      'x-decorator': 'FormItem',
+      'x-component': 'ColorInput',
+    },
+    voidColor: {
+      type: 'string',
+      default: '#c8c9cc',
+      'x-decorator': 'FormItem',
+      'x-component': 'ColorInput',
+    },
+    disabledColor: {
+      type: 'string',
+      default: '#c8c9cc',
+      'x-decorator': 'FormItem',
+      'x-component': 'ColorInput',
     },
     allowHalf: {
-      type: 'boolean',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-    },
-    tooltips: {
-      'x-decorator': 'FormItem',
-      'x-component': 'ValueInput',
-      'x-component-props': {
-        include: ['EXPRESSION'],
-      },
-    },
-    autoFocus: {
       type: 'boolean',
       'x-decorator': 'FormItem',
       'x-component': 'Switch',

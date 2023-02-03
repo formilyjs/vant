@@ -1,4 +1,4 @@
-import { CellGroup } from 'vant'
+import { defineComponent } from 'vue-demi'
 import { TreeNode, createResource } from '@designable/core'
 import {
   useTreeNode,
@@ -8,44 +8,28 @@ import {
 } from '@formily/antdv-designable'
 import { ArrayBase } from '@formily/vant'
 import { observer } from '@formily/reactive-vue'
-import cls from 'classnames'
 import { composeExport } from '@formily/vant/esm/__builtins__'
-import { defineComponent } from 'vue-demi'
 import { uid } from '@designable/shared'
 import {
-  hasNodeByComponentPath,
   queryNodesByComponentPath,
   createEnsureTypeItemsNode,
-  findNodeByComponentPath,
   createNodeId,
 } from '../../shared'
 import { useDropTemplate } from '../../hooks'
-import { LoadTemplate } from '../../common/LoadTemplate'
 import { createArrayBehavior } from '../ArrayBase'
-// import './styles.less'
+import './styles.less'
 
 const ensureObjectItemsNode = createEnsureTypeItemsNode('object')
-
-const isArrayCardsOperation = (name: string) =>
-  name === 'ArrayItems.Remove' ||
-  name === 'ArrayItems.MoveDown' ||
-  name === 'ArrayItems.MoveUp'
 
 export const ArrayItems = composeExport(
   observer(
     defineComponent({
-      setup(props, { slots }) {
+      props: [],
+      setup(props, { attrs }) {
         const nodeRef = useTreeNode()
         const nodeIdRef = useNodeIdProps()
 
         const designerRef = useDropTemplate('ArrayItems', (source) => {
-          // const indexNode = new TreeNode({
-          //   componentName: nodeRef.value.componentName,
-          //   props: {
-          //     type: 'void',
-          //     'x-component': 'ArrayItems.Index',
-          //   },
-          // })
           const additionNode = new TreeNode({
             componentName: nodeRef.value.componentName,
             props: {
@@ -58,39 +42,15 @@ export const ArrayItems = composeExport(
             componentName: nodeRef.value.componentName,
             props: {
               type: 'void',
-              title: 'Addition',
               'x-component': 'ArrayItems.Remove',
             },
           })
-          // const moveDownNode = new TreeNode({
-          //   componentName: nodeRef.value.componentName,
-          //   props: {
-          //     type: 'void',
-          //     title: 'Addition',
-          //     'x-component': 'ArrayItems.MoveDown',
-          //   },
-          // })
-          // const moveUpNode = new TreeNode({
-          //   componentName: nodeRef.value.componentName,
-          //   props: {
-          //     type: 'void',
-          //     title: 'Addition',
-          //     'x-component': 'ArrayItems.MoveUp',
-          //   },
-          // })
-
           const objectNode = new TreeNode({
             componentName: nodeRef.value.componentName,
             props: {
               type: 'object',
             },
-            children: [
-              // indexNode,
-              ...source,
-              removeNode,
-              // moveDownNode,
-              // moveUpNode,
-            ],
+            children: [...source, removeNode],
           })
           return [objectNode, additionNode]
         })
@@ -106,16 +66,6 @@ export const ArrayItems = composeExport(
               'ArrayItems',
               'ArrayItems.Addition',
             ])
-            // const indexes = queryNodesByComponentPath(node, [
-            //   'ArrayItems',
-            //   '*',
-            //   'ArrayItems.Index',
-            // ])
-            // const operations = queryNodesByComponentPath(node, [
-            //   'ArrayItems',
-            //   '*',
-            //   isArrayCardsOperation,
-            // ])
             const children = queryNodesByComponentPath(node, [
               'ArrayItems',
               '*',
@@ -139,12 +89,11 @@ export const ArrayItems = composeExport(
                       <DroppableWidget hasChildren={false} />
                     )}
                   </div>
-                  {/* TODO::some how cannot make it working */}
-                  {/* <div style="text-align:center"> */}
-                  {additions.map(() => {
-                    return <ArrayBase.Addition title="添加单项" />
-                  })}
-                  {/* </div> */}
+                  <div>
+                    {additions.map((node) => {
+                      return <TreeNodeWidget key={node.id} node={node} />
+                    })}
+                  </div>
                 </ArrayBase.Item>
               </ArrayBase>
             )
@@ -175,11 +124,7 @@ export const ArrayItems = composeExport(
       ],
     }),
     Addition: ArrayBase.Addition,
-    Index: ArrayBase.Index,
     Item: ArrayBase.Item,
-    // MoveDown: ArrayBase.MoveDown,
-    // MoveUp: ArrayBase.MoveUp,
     Remove: ArrayBase.Remove,
-    // SortHandle: ArrayBase.SortHandle,
   }
 )

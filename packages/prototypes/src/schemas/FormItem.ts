@@ -3,92 +3,15 @@ import type { ISchema } from '@formily/vue'
 export const FormItem: ISchema = {
   type: 'object',
   properties: {
-    tooltip: {
-      type: 'string',
-      'x-decorator': 'FormItem',
-      'x-component': 'Input',
-    },
-    addonBefore: {
-      type: 'string',
-      'x-decorator': 'FormItem',
-      'x-component': 'Input',
-    },
-    addonAfter: {
-      type: 'string',
-      'x-decorator': 'FormItem',
-      'x-component': 'Input',
-    },
-    labelCol: {
-      type: 'number',
-      'x-decorator': 'FormItem',
-      'x-component': 'InputNumber',
-    },
-    wrapperCol: {
-      type: 'number',
-      'x-decorator': 'FormItem',
-      'x-component': 'InputNumber',
-    },
     labelWidth: {
+      type: 'string|number',
       'x-decorator': 'FormItem',
       'x-component': 'SizeInput',
-    },
-    wrapperWidth: {
-      'x-decorator': 'FormItem',
-      'x-component': 'SizeInput',
-    },
-    colon: {
-      type: 'boolean',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
       'x-component-props': {
-        defaultChecked: true,
+        include: ['inherit', 'px', 'em'],
       },
-    },
-    asterisk: {
-      type: 'boolean',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-    },
-    gridSpan: {
-      type: 'number',
-      'x-decorator': 'FormItem',
-      'x-component': 'InputNumber',
-    },
-    feedbackLayout: {
-      type: 'string',
-      enum: ['loose', 'terse', 'popover', 'none', null],
-      'x-decorator': 'FormItem',
-      'x-component': 'Select',
-      'x-component-props': {
-        defaultValue: 'loose',
-      },
-    },
-    size: {
-      type: 'string',
-      enum: ['large', 'small', 'default', null],
-      'x-decorator': 'FormItem',
-      'x-component': 'Select',
-      'x-component-props': {
-        defaultValue: 'default',
-      },
-    },
-    layout: {
-      type: 'string',
-      enum: ['vertical', 'horizontal', 'inline', null],
-      'x-decorator': 'FormItem',
-      'x-component': 'Select',
-      'x-component-props': {
-        defaultValue: 'horizontal',
-      },
-    },
-
-    tooltipLayout: {
-      type: 'string',
-      enum: ['icon', 'text', null],
-      'x-decorator': 'FormItem',
-      'x-component': 'Select',
-      'x-component-props': {
-        defaultValue: 'icon',
+      'x-reactions': (field) => {
+        field.value === 'inherit' && field.setValue(undefined)
       },
     },
     labelAlign: {
@@ -109,27 +32,63 @@ export const FormItem: ISchema = {
         defaultValue: 'left',
       },
     },
-    labelWrap: {
+    colon: {
       type: 'boolean',
       'x-decorator': 'FormItem',
       'x-component': 'Switch',
+      'x-component-props': {
+        defaultChecked: true,
+      },
     },
-    wrapperWrap: {
+    size: {
+      type: 'string',
+      enum: ['large', null],
+      'x-decorator': 'FormItem',
+      'x-component': 'Select',
+      'x-component-props': {
+        defaultValue: null,
+      },
+    },
+    center: {
       type: 'boolean',
       'x-decorator': 'FormItem',
       'x-component': 'Switch',
+      'x-component-props': {},
     },
-    fullness: {
+    isLink: {
       type: 'boolean',
       'x-decorator': 'FormItem',
       'x-component': 'Switch',
+      'x-component-props': {},
     },
-    inset: {
-      type: 'boolean',
+    arrowDirection: {
+      type: 'string',
+      enum: ['left', 'right', 'up', 'down'],
       'x-decorator': 'FormItem',
-      'x-component': 'Switch',
+      'x-component': 'Select',
+      'x-component-props': {
+        defaultValue: 'right',
+      },
     },
-    bordered: {
+    leftIcon: {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'Input',
+      'x-component-props': {},
+    },
+    rightIcon: {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'Input',
+      'x-component-props': {},
+    },
+    iconPrefix: {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'Input',
+      'x-component-props': {},
+    },
+    border: {
       type: 'boolean',
       'x-decorator': 'FormItem',
       'x-component': 'Switch',

@@ -1,10 +1,11 @@
-import { Slider as ElSlider } from 'vant'
+import { Slider as VanSlider } from 'vant'
 import { composeExport } from '@formily/vant/esm/__builtins__'
 import { createBehavior, createResource } from '@designable/core'
 import { createFieldSchema } from '../Field'
 import { AllSchemas } from '../../schemas'
 import { AllLocales } from '../../locales'
-export const Slider = composeExport(ElSlider, {
+
+export const Slider = composeExport(VanSlider, {
   Behavior: createBehavior({
     name: 'Slider',
     extends: ['Field'],
@@ -20,7 +21,7 @@ export const Slider = composeExport(ElSlider, {
       {
         componentName: 'Field',
         props: {
-          type: 'number',
+          type: 'number|array<number>',
           title: 'Slider',
           'x-decorator': 'FormItem',
           'x-component': 'Slider',

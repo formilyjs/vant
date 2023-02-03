@@ -1,6 +1,10 @@
 // auto generated code
+import './area/style.less'
 import './array-items/style.less'
 import './form-layout/style.less'
-import './input/style.less'
+import './calendar/style.less'
+import './cascader/style.less'
+import './datetime-picker/style.less'
+import './picker/style.less'
 import './preview-text/style.less'
 import './space/style.less'

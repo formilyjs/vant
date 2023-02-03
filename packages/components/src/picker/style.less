@@ -1,0 +1,9 @@
+@import '../__builtins__/styles/common.less';
+
+@array-items-prefix-cls: ~'@{van-prefix}-formily-picker';
+
+.@{array-items-prefix-cls} {
+  &--bordered:not(:last-child) .@{van-prefix}-cell::after {
+    display: block;
+  }
+}

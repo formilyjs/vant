@@ -18,7 +18,8 @@ export interface IArrayItemsItemProps {
 const ArrayItemsInner = observer(
   defineComponent({
     name: 'FArrayItems',
-    setup(props, { attrs }) {
+    props: [],
+    setup(_, {}) {
       const fieldRef = useField<ArrayField>()
       const schemaRef = useFieldSchema()
 
@@ -60,7 +61,9 @@ const ArrayItemsInner = observer(
                 default: () =>
                   h(
                     'div',
-                    {},
+                    {
+                      class: [`${prefixCls}-item`],
+                    },
                     {
                       default: () => content,
                     }

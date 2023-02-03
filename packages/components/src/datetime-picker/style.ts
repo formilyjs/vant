@@ -3,3 +3,4 @@
 
 // 依赖
 import '../preview-text/style'
+import '../style'

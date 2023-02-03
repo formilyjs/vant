@@ -3,9 +3,13 @@ export const CheckboxGroup = {
     title: '复选框组',
     settings: {
       'x-component-props': {
-        optionType: { title: '选项类型', dataSource: ['默认', '按钮'] },
-        direction: { title: '排列方向' },
-        checkedColor: { title: '图标颜色' },
+        max: '最大选择数量',
+        direction: {
+          title: '排列方向',
+          dataSource: ['水平', '垂直'],
+        },
+        iconSize: '图标大小',
+        checkedColor: '图标颜色',
       },
     },
   },
@@ -13,9 +17,16 @@ export const CheckboxGroup = {
     title: 'Checkbox',
     settings: {
       'x-component-props': {
-        optionType: { title: '选项类型', dataSource: ['默认', '按钮'] },
-        direction: { title: '排列方向' },
-        checkedColor: { title: '图标颜色' },
+        max: {
+          title: 'Max',
+          tooltip: 'Maximum amount of checked options',
+        },
+        direction: {
+          title: 'Direction',
+          dataSource: ['Horizontal', 'Vertical'],
+        },
+        iconSize: 'Icon size',
+        checkedColor: 'Checked coloe',
       },
     },
   },

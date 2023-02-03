@@ -29,6 +29,7 @@ export const DatetimePicker = composeExport(FromilyDatetimePicker, {
             datetimePickerProps: {
               type: 'time',
             },
+            formItemProps: {},
           },
         },
       },

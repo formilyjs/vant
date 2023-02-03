@@ -1,4 +1,7 @@
-export const Field = {
+import { createLocales } from '@designable/core'
+import { FormItemDecoratorProps } from './FormItem'
+
+export const Field = createLocales(FormItemDecoratorProps, {
   'zh-CN': {
     settings: {
       name: '字段标识',
@@ -27,20 +30,7 @@ export const Field = {
       'x-component-props': {
         size: {
           title: '尺寸',
-          dataSource: [
-            {
-              label: '大',
-              value: 'large',
-            },
-            {
-              label: '小',
-              value: 'small',
-            },
-            {
-              label: '默认',
-              value: 'default',
-            },
-          ],
+          dataSource: ['大', '默认'],
         },
         allowClear: '允许清除内容',
         autoFocus: '自动获取焦点',
@@ -65,60 +55,6 @@ export const Field = {
         },
       },
       'x-decorator-props': {
-        addonAfter: '后缀标签',
-        addonBefore: '前缀标签',
-        tooltip: '提示',
-        asterisk: '星号',
-        gridSpan: '网格跨列',
-        labelCol: '标签网格宽度',
-        wrapperCol: '组件网格宽度',
-        colon: '是否有冒号',
-        labelAlign: {
-          title: '标签对齐',
-          dataSource: ['左对齐', '右对齐', '继承'],
-        },
-        wrapperAlign: {
-          title: '组件对齐',
-          dataSource: ['左对齐', '右对齐', '继承'],
-        },
-        labelWrap: '标签换行',
-        wrapperWrap: '组件换行',
-        labelWidth: '标签宽度',
-        wrapperWidth: '组件宽度',
-        fullness: '组件占满',
-        inset: '内联布局',
-        shallow: '是否浅传递',
-        bordered: '是否有边框',
-        size: {
-          title: '尺寸',
-          dataSource: [
-            {
-              label: '大',
-              value: 'large',
-            },
-            {
-              label: '小',
-              value: 'small',
-            },
-            {
-              label: '默认',
-              value: 'default',
-            },
-            {
-              label: '继承',
-              value: 'inherit',
-            },
-          ],
-        },
-        layout: { title: '布局', dataSource: ['垂直', '水平', '内联', '继承'] },
-        feedbackLayout: {
-          title: '反馈布局',
-          dataSource: ['宽松', '紧凑', '弹层', '无', '继承'],
-        },
-        tooltipLayout: {
-          title: '提示布局',
-          dataSource: ['图标', '文本', '继承'],
-        },
         style: {
           width: '宽度',
           height: '高度',
@@ -170,20 +106,7 @@ export const Field = {
       'x-component-props': {
         size: {
           title: 'Size',
-          dataSource: [
-            {
-              label: 'Large',
-              value: 'large',
-            },
-            {
-              label: 'Small',
-              value: 'small',
-            },
-            {
-              label: 'Default',
-              value: 'default',
-            },
-          ],
+          dataSource: ['Large', 'Default'],
         },
         allowClear: 'Allow Clear',
         autoFocus: 'Auto Focus',
@@ -206,59 +129,6 @@ export const Field = {
         },
       },
       'x-decorator-props': {
-        addonAfter: 'Addon After',
-        addonBefore: 'Addon Before',
-        tooltip: 'Tooltip',
-        asterisk: 'Asterisk',
-        gridSpan: 'Grid Span',
-        labelCol: 'Label Col',
-        wrapperCol: 'Wrapper Col',
-        colon: 'Colon',
-        labelAlign: {
-          title: 'Label Align',
-          dataSource: ['Left', 'Right', 'Inherit'],
-        },
-        wrapperAlign: {
-          title: 'Wrapper Align',
-          dataSource: ['Left', 'Right', 'Inherit'],
-        },
-        labelWrap: 'Label Wrap',
-        wrapperWrap: 'Wrapper Wrap',
-        labelWidth: 'Label Width',
-        wrapperWidth: 'Wrapper Width',
-        fullness: 'Fullness',
-        inset: 'Inset',
-        shallow: 'Shallow',
-        bordered: 'Bordered',
-        size: {
-          title: 'Size',
-          dataSource: [
-            {
-              label: 'Large',
-              value: 'large',
-            },
-            {
-              label: 'Small',
-              value: 'small',
-            },
-            {
-              label: 'Default',
-              value: 'default',
-            },
-          ],
-        },
-        layout: {
-          title: 'Layout',
-          dataSource: ['Vertical', 'Horizontal', 'Inline', 'Inherit'],
-        },
-        feedbackLayout: {
-          title: 'Feedback Layout',
-          dataSource: ['Loose', 'Terse', 'Popup', 'None', 'Inherit'],
-        },
-        tooltipLayout: {
-          title: 'Tooltip Layout',
-          dataSource: ['Icon', 'Text', 'Inherit'],
-        },
         style: {
           width: 'Width',
           height: 'Height',
@@ -275,4 +145,4 @@ export const Field = {
       },
     },
   },
-}
+})

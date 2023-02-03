@@ -3,57 +3,14 @@ import type { ISchema } from '@formily/vue'
 export const FormLayout: ISchema = {
   type: 'object',
   properties: {
-    labelCol: {
-      type: 'number',
-      'x-decorator': 'FormItem',
-      'x-component': 'InputNumber',
-    },
-    wrapperCol: {
-      type: 'number',
-      'x-decorator': 'FormItem',
-      'x-component': 'InputNumber',
-    },
     labelWidth: {
+      type: 'string|number',
+      default: '6.2em',
       'x-decorator': 'FormItem',
       'x-component': 'SizeInput',
-    },
-    wrapperWidth: {
-      'x-decorator': 'FormItem',
-      'x-component': 'SizeInput',
-    },
-    colon: {
-      type: 'boolean',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-      // 'x-reactions': '{{(field) => { !field.value && field.setValue(true) }}}',
-    },
-    feedbackLayout: {
-      type: 'string',
-      enum: ['loose', 'terse', 'popover', 'none', null],
-      'x-decorator': 'FormItem',
-      'x-component': 'Select',
-      // 'x-reactions': "{{ (field) => { !field.value && field.setValue('loose') }}}",
-    },
-    size: {
-      type: 'string',
-      enum: ['large', null],
-      'x-decorator': 'FormItem',
-      'x-component': 'Select',
-      // 'x-reactions': "{{(field) => { !field.value && field.setValue('default') }}}",
-    },
-    layout: {
-      type: 'string',
-      enum: ['vertical', 'horizontal', 'inline', null],
-      'x-decorator': 'FormItem',
-      'x-component': 'Select',
-      // 'x-reactions': "{{(field) => { !field.value && field.setValue('horizontal') }}}",
-    },
-    tooltipLayout: {
-      type: 'string',
-      enum: ['icon', 'text', null],
-      'x-decorator': 'FormItem',
-      'x-component': 'Select',
-      // 'x-reactions': "{{(field) => { !field.value && field.setValue('icon') }}}",
+      'x-component-props': {
+        include: ['px', 'em'],
+      },
     },
     labelAlign: {
       type: 'string',
@@ -69,26 +26,18 @@ export const FormLayout: ISchema = {
       'x-component': 'Select',
       // 'x-reactions': "{{(field) => { !field.value && field.setValue('left') }}}",
     },
-    labelWrap: {
+    colon: {
       type: 'boolean',
       'x-decorator': 'FormItem',
       'x-component': 'Switch',
+      // 'x-reactions': '{{(field) => { !field.value && field.setValue(true) }}}',
     },
-    wrapperWrap: {
-      type: 'boolean',
+    size: {
+      type: 'string',
+      enum: ['large', null],
       'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-    },
-
-    fullness: {
-      type: 'boolean',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-    },
-    inset: {
-      type: 'boolean',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
+      'x-component': 'Select',
+      // 'x-reactions': "{{(field) => { !field.value && field.setValue('default') }}}",
     },
     shallow: {
       type: 'boolean',
@@ -96,7 +45,7 @@ export const FormLayout: ISchema = {
       'x-component': 'Switch',
       // 'x-reactions': '{{(field) => { !field.value && field.setValue(true) }}}',
     },
-    bordered: {
+    border: {
       type: 'boolean',
       'x-decorator': 'FormItem',
       'x-component': 'Switch',

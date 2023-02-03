@@ -4,11 +4,56 @@ import type { ISchema } from '@formily/vue'
 export const Slider: ISchema = {
   type: 'object',
   properties: {
-    dots: {
-      title: GlobalRegistry.getDesignerMessage('settings.sliderDots'),
-      type: 'boolean',
+    min: {
+      type: 'number',
+      default: 0,
       'x-decorator': 'FormItem',
-      'x-component': 'Switch',
+      'x-component': 'InputNumber',
+      'x-component-props': {},
+    },
+    max: {
+      type: 'number',
+      default: 100,
+      'x-decorator': 'FormItem',
+      'x-component': 'InputNumber',
+      'x-component-props': {},
+    },
+    step: {
+      type: 'number',
+      default: 1,
+      'x-decorator': 'FormItem',
+      'x-component': 'InputNumber',
+      'x-component-props': {
+        min: 1,
+      },
+    },
+    'bar-height': {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'SizeInput',
+      'x-component-props': {
+        include: ['px'],
+      },
+    },
+    'button-size': {
+      type: 'string',
+      'x-decorator': 'FormItem',
+      'x-component': 'SizeInput',
+      'x-component-props': {
+        include: ['px'],
+      },
+    },
+    'active-color': {
+      type: 'string|boolean|number',
+      'x-decorator': 'FormItem',
+      'x-component': 'ColorInput',
+      'x-component-props': {},
+    },
+    'inactive-color': {
+      type: 'string|boolean|number',
+      'x-decorator': 'FormItem',
+      'x-component': 'ColorInput',
+      'x-component-props': {},
     },
     // range: {
     //   title: GlobalRegistry.getDesignerMessage('settings.sliderRange'),
@@ -16,59 +61,10 @@ export const Slider: ISchema = {
     //   'x-decorator': 'FormItem',
     //   'x-component': 'Switch',
     // },
-    reverse: {
-      title: GlobalRegistry.getDesignerMessage('settings.sliderReverse'),
-      type: 'boolean',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-    },
-    vertical: {
-      type: 'boolean',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-    },
-    tooltipVisible: {
-      type: 'boolean',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-    },
-    tooltipPlacement: {
-      'x-decorator': 'FormItem',
-      'x-component': 'ValueInput',
-      'x-component-props': {
-        include: ['EXPRESSION'],
-      },
-    },
-    marks: {
-      'x-decorator': 'FormItem',
-      'x-component': 'ValueInput',
-      'x-component-props': {
-        include: ['EXPRESSION'],
-      },
-    },
-    max: {
-      type: 'number',
-      'x-decorator': 'FormItem',
-      'x-component': 'InputNumber',
-      'x-component-props': {
-        defaultValue: 100,
-      },
-    },
-    min: {
-      type: 'number',
-      'x-decorator': 'FormItem',
-      'x-component': 'InputNumber',
-      'x-component-props': {
-        defaultValue: 0,
-      },
-    },
-    step: {
-      type: 'number',
-      'x-decorator': 'FormItem',
-      'x-component': 'InputNumber',
-      'x-component-props': {
-        defaultValue: 1,
-      },
-    },
+    // vertical: {
+    //   type: 'boolean',
+    //   'x-decorator': 'FormItem',
+    //   'x-component': 'Switch',
+    // },
   },
 }

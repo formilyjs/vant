@@ -11,6 +11,7 @@
   .@{van-prefix}-slider,
   .@{van-prefix}-checkbox,
   .@{van-prefix}-cascader,
+  .@{van-prefix}-cell--clickable,
   .@{van-prefix}-textarea,
   .@{van-prefix}-rate,
   .@{van-prefix}-switch,
@@ -19,8 +20,7 @@
   .@{van-prefix}-checkbox-group,
   .@{van-prefix}-checkbox-wrapper,
   .@{van-prefix}-radio-group,
-  .@{van-prefix}-upload,
-  .@{van-prefix}-transfer,
+  .@{van-prefix}-uploader,
   .@{van-prefix}-select,
   .@{van-prefix}-select-selector {
     pointer-events: none !important;
@@ -30,7 +30,22 @@
     }
   }
 
+  .@{van-prefix}-cell{
+    input {
+      pointer-events: none !important;
+    }
+  }
+
   .@{van-prefix}-icon svg {
     pointer-events: none;
+  }  
+}
+
+
+.dn-mobile-simulator{
+  .@{van-prefix}-cell{
+    & + .@{van-prefix}-overlay, & + .@{van-prefix}-overlay + .@{van-prefix}-popup {
+      position: absolute;
+    }
   }
 }

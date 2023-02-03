@@ -16,16 +16,36 @@ export const Area = composeExport(FormilyArea, {
     designerLocales: AllLocales.Area,
   }),
   Resource: createResource({
-    icon: 'AreaSource',
+    icon: 'CascaderSource',
     elements: [
       {
-        componentName: 'Area',
+        componentName: 'Field',
         props: {
           type: 'string',
           title: 'Area',
           // 'x-decorator': 'FormItem',
           'x-component': 'Area',
-          'x-component-props': {},
+          'x-component-props': {
+            areaProps: {
+              areaList: {
+                province_list: {
+                  110000: 'Beijing',
+                  330000: 'Zhejiang Province',
+                },
+                city_list: {
+                  110100: 'Beijing City',
+                  330100: 'Hangzhou',
+                },
+                county_list: {
+                  110101: 'Dongcheng District',
+                  110102: 'Xicheng District',
+                },
+              },
+            },
+            formItemProps: {
+              placeholder: '请选择',
+            },
+          },
         },
       },
     ],

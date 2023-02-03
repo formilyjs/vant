@@ -118,7 +118,6 @@ const toDesignableFieldProps = (
     results.decorator = [decorator, toJS(decoratorProps)]
   }
   if (component) {
-    
     // 有的是functional 有的是 正常的 vueComponent
     results.component = [
       isFn(component)
@@ -133,12 +132,11 @@ const toDesignableFieldProps = (
     FormPath.setIn(results['component'][1], nodeIdAttrName, id)
   }
   // vue为异步渲染需要进行缓存 不然就变成了函数
-  // const title = results.title
-  // results.title =
-  //   results.title && (() => <span data-content-editable="title">{title}</span>)
+  const title = results.title
+  results.title =
+    results.title && (() => <span data-content-editable="title">{title}</span>)
   // TODO::formily vue 貌似不支持呢
-  // results.description = results.description 
-  // (() => <span data-content-editable="description">{description}</span>)
+  results.description = results.description //  (() => <span data-content-editable="description">{description}</span>)
   return results
 }
 //

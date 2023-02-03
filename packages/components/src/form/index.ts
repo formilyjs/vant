@@ -53,7 +53,6 @@ export const Form = defineComponent<FormProps>({
                   attrs: {
                     ...attrs,
                   },
-                  class: { '123': true },
                 },
                 {
                   default: () => [

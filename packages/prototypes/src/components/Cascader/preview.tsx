@@ -23,10 +23,46 @@ export const Cascader = composeExport(FormilyCascader, {
         props: {
           type: 'string',
           title: 'Cascader',
+          enum: [
+            {
+              value: 'zhejiang',
+              text: 'Zhejiang',
+              children: [
+                {
+                  value: 'hangzhou',
+                  text: 'Hangzhou',
+                  children: [
+                    {
+                      value: 'xihu',
+                      text: 'West Lake',
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              value: 'jiangsu',
+              text: 'Jiangsu',
+              children: [
+                {
+                  value: 'nanjing',
+                  text: 'Nanjing',
+                  children: [
+                    {
+                      value: 'zhonghuamen',
+                      text: 'Zhong Hua Men',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
           // 'x-decorator': 'FormItem',
           'x-component': 'Cascader',
           'x-component-props': {
-            formItemProps: {},
+            formItemProps: {
+              placeholder: '请选择',
+            },
           },
         },
       },

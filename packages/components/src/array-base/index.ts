@@ -7,13 +7,12 @@ import {
   toRefs,
   ref,
   onBeforeUnmount,
-  PropType,
 } from 'vue-demi'
 import { isValid, uid, clone } from '@formily/shared'
 import { ArrayField } from '@formily/core'
 import { Fragment, useField, useFieldSchema, h } from '@formily/vue'
 import { Button, Icon } from 'vant'
-import { composeExport, stylePrefix } from '../__builtins__'
+import { composeExport, resolveComponent, stylePrefix } from '../__builtins__'
 
 import type { Button as ButtonProps } from 'vant'
 import type { Schema } from '@formily/json-schema'
@@ -130,15 +129,7 @@ const getDefaultValue = (defaultValue: any, schema: Schema): any => {
 
 const ArrayBaseInner = defineComponent<IArrayBaseProps>({
   name: 'ArrayBase',
-  props: {
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    keyMap: {
-      type: [WeakMap, Array] as PropType<WeakMap<Object, String> | String[]>,
-    },
-  },
+  props: ['disabled', 'keyMap'],
   setup(props, { slots, listeners }) {
     const field = useField<ArrayField>()
     const schema = useFieldSchema()
@@ -210,8 +201,6 @@ const ArrayBaseAddition = defineComponent({
           on: {
             ...listeners,
             click: (e) => {
-              e?.stopPropagation?.()
-              e?.preventDefault?.()
               if (array.props?.disabled) return
               const defaultValue = getDefaultValue(
                 props.defaultValue,
@@ -231,7 +220,7 @@ const ArrayBaseAddition = defineComponent({
           },
         },
         {
-          default: () => [props.title || self.value.title],
+          default: () => [resolveComponent(props.title || self.value.title)],
         }
       )
     }

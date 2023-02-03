@@ -8,32 +8,29 @@ import type { DnFC } from '@formily/antdv-designable'
 
 export const Input: DnFC<Vue.Component<any, any, any, typeof FormilyInput>> =
   composeExport(FormilyInput, {
-    Behavior: createBehavior(
-      {
-        name: 'Input',
-        extends: ['Field'],
-        selector: (node) => node.props['x-component'] === 'Input',
-        designerProps: {
-          propsSchema: createFieldSchema(AllSchemas.Input),
-        },
-        designerLocales: AllLocales.Input,
+    Behavior: createBehavior({
+      name: 'Input',
+      extends: ['Field'],
+      selector: (node) => node.props['x-component'] === 'Input',
+      designerProps: {
+        propsSchema: createFieldSchema(AllSchemas.Input),
       },
-    ),
-    Resource: createResource(
-      {
-        icon: 'InputSource',
-        elements: [
-          {
-            componentName: 'Field',
-            props: {
-              type: 'string',
-              title: 'Input',
-              // 'x-decorator': 'FormItem',
-              'x-component': 'Input',
-              'x-component-props': { placeholder: '请输入' },
+      designerLocales: AllLocales.Input,
+    }),
+    Resource: createResource({
+      icon: 'InputSource',
+      elements: [
+        {
+          componentName: 'Field',
+          props: {
+            type: 'string',
+            title: 'Input',
+            'x-component': 'Input',
+            'x-component-props': {
+              placeholder: '请输入',
             },
           },
-        ],
-      },
-    ),
+        },
+      ],
+    }),
   })

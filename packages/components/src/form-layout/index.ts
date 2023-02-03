@@ -13,32 +13,15 @@ import { useResponsiveFormLayout } from './useResponsiveFormLayout'
 
 export type FormLayoutProps = {
   className?: string
+  labelWidth?: number | string
+  labelAlign?: 'right' | 'left'
+  inputAlign?: 'right' | 'left'
   colon?: boolean
-  labelAlign?: 'right' | 'left' | ('right' | 'left')[]
-  wrapperAlign?: 'right' | 'left' | ('right' | 'left')[]
-  labelWrap?: boolean
-  labelWidth?: number
-  wrapperWidth?: number
-  wrapperWrap?: boolean
-  labelCol?: number | number[]
-  wrapperCol?: number | number[]
-  fullness?: boolean
-  size?: 'small' | 'default' | 'large'
-  layout?:
-    | 'vertical'
-    | 'horizontal'
-    | 'inline'
-    | ('vertical' | 'horizontal' | 'inline')[]
+  size?: 'large'
+  border?: boolean
   direction?: 'rtl' | 'ltr'
   shallow?: boolean
-  feedbackLayout?: 'loose' | 'terse' | 'popover'
-  tooltipLayout?: 'icon' | 'text'
-  bordered?: boolean
-  breakpoints?: number[]
-  inset?: boolean
   spaceGap?: number
-  gridColumnGap?: number
-  gridRowGap?: number
 }
 
 export const FormLayoutDeepContext: InjectionKey<Ref<FormLayoutProps>> = Symbol(
@@ -83,27 +66,14 @@ export const FormLayout = defineComponent<FormLayoutProps>({
   props: {
     className: {},
     colon: { default: true },
-    labelAlign: {},
-    wrapperAlign: {},
-    labelWrap: { default: false },
     labelWidth: {},
-    wrapperWidth: {},
-    wrapperWrap: { default: false },
-    labelCol: {},
-    wrapperCol: {},
-    fullness: { default: false },
-    size: { default: 'default' },
-    layout: { default: 'horizontal' },
+    labelAlign: {},
+    inputAlign: {},
+    border: { default: true },
+    size: {},
     direction: { default: 'ltr' },
     shallow: { default: true },
-    feedbackLayout: {},
-    tooltipLayout: {},
-    bordered: { default: true },
-    inset: { default: false },
-    breakpoints: {},
     spaceGap: {},
-    gridColumnGap: {},
-    gridRowGap: {},
   },
   setup(customProps, { slots, refs }) {
     const { props } = useResponsiveFormLayout(customProps, refs)
@@ -138,10 +108,8 @@ export const FormLayout = defineComponent<FormLayoutProps>({
     const formPrefixCls = `${stylePrefix}-form`
     return () => {
       const classNames = {
-        [`${formPrefixCls}-${props.value.layout}`]: true,
         [`${formPrefixCls}-rtl`]: props.value.direction === 'rtl',
-        [`${formPrefixCls}-${props.value.size}`]:
-          props.value.size !== undefined,
+        [`${formPrefixCls}-${props.value.size}`]: !!props.value.size,
         [`${props.value.className}`]: props.value.className !== undefined,
       }
       return h(

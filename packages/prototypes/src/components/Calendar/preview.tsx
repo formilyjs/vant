@@ -27,11 +27,7 @@ export const Calendar = composeExport(FormilyCalendar, {
           'x-component': 'Calendar',
           'x-component-props': {
             formItemProps: {
-              format: (date) =>
-                date &&
-                `${date.getFullYear()}/${
-                  date.getMonth() + 1
-                }/${date.getDate()}`,
+              placeholder: '请选择',
             },
           },
         },

@@ -8,32 +8,99 @@ import {
   resolveComponent,
   stylePrefix,
 } from '../__builtins__'
+import { useFormLayout } from '../form-layout'
 import { PreviewText } from '../preview-text'
 
-import type { Field as VanInputProps } from 'vant'
+import type { Component } from 'vue'
 
-export type InputProps = VanInputProps
+export type InputProps = {
+  required?: boolean
+  label?: string | Component
+  colon?: boolean
+  labelWidth?: number | string
+  labelAlign?: 'left' | 'right'
+  inputAlign?: 'left' | 'right'
+  size?: 'large'
+  center?: boolean
+  leftIcon?: string
+  rightIcon?: string
+  iconPrefix?: string
+  extra?: string
+  border?: boolean
+}
 
 const TransformVanInput = transformComponent<InputProps>(VanInput, {
   change: 'input',
 })
 
 export const BaseInput = observer(
-  defineComponent({
+  defineComponent<InputProps>({
     name: 'FBaseInput',
     props: {
+      required: {},
       label: {},
+      colon: {},
+      labelWidth: {},
+      labelAlign: {},
+      inputAlign: {},
+      size: {},
+      center: {},
+      isLink: {},
+      rightIcon: {},
+      iconPrefix: {},
+      extra: {},
+      border: {},
     },
     setup(props, { attrs, slots, listeners }) {
+      const deepLayoutRef = useFormLayout()
+
       return () => {
+        const deepLayout = deepLayoutRef.value
+        const {
+          label,
+          required,
+          colon = deepLayout.colon ?? false,
+          labelWidth = deepLayout.labelWidth,
+          labelAlign = deepLayout.labelAlign ?? 'left',
+          inputAlign = deepLayout.inputAlign ?? 'left',
+          size = deepLayout.size,
+          border = deepLayout.border,
+          center,
+          leftIcon,
+          rightIcon,
+          iconPrefix,
+          extra,
+        } = props
         return h(
           TransformVanInput,
           {
-            class: { [`${stylePrefix}-input-asterisk`]: attrs.asterisk },
-            attrs: { ...attrs, ...props },
+            attrs: {
+              ...attrs,
+              required,
+              colon,
+              labelWidth,
+              labelAlign,
+              inputAlign,
+              size,
+              border,
+              center,
+              leftIcon,
+              rightIcon,
+              iconPrefix,
+            },
             on: listeners,
           },
-          slots
+          {
+            label: () => resolveComponent(label),
+            input: () => slots.default?.(),
+            extra: () =>
+              extra &&
+              h(
+                'div',
+                { class: `${stylePrefix}-extra` },
+                { default: () => [extra] }
+              ),
+          }
         )
       }
     },

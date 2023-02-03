@@ -50,30 +50,6 @@ export const createArrayBehavior = (name: string) => {
         propsSchema: createVoidFieldSchema(),
       },
       designerLocales: AllLocales.ArrayIndex,
-    },
-    // {
-    //   name: `${name}.MoveUp`,
-    //   extends: ['Field'],
-    //   selector: (node) => node.props['x-component'] === `${name}.MoveUp`,
-    //   designerProps: {
-    //     allowDrop(parent) {
-    //       return parent.props['x-component'] === name
-    //     },
-    //     propsSchema: createVoidFieldSchema(),
-    //   },
-    //   designerLocales: AllLocales.ArrayMoveUp,
-    // },
-    // {
-    //   name: `${name}.MoveDown`,
-    //   extends: ['Field'],
-    //   selector: (node) => node.props['x-component'] === `${name}.MoveDown`,
-    //   designerProps: {
-    //     allowDrop(parent) {
-    //       return parent.props['x-component'] === 'ArrayCards'
-    //     },
-    //     propsSchema: createVoidFieldSchema(),
-    //   },
-    //   designerLocales: AllLocales.ArrayMoveDown,
-    // }
+    }
   )
 }

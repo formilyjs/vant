@@ -1,11 +1,11 @@
-import { Rate as ElRate } from 'vant'
+import { Rate as VanRate } from 'vant'
 import { composeExport } from '@formily/vant/esm/__builtins__'
 import { createBehavior, createResource } from '@designable/core'
 import { createFieldSchema } from '../Field'
 import { AllSchemas } from '../../schemas'
 import { AllLocales } from '../../locales'
 
-export const Rate = composeExport(ElRate, {
+export const Rate = composeExport(VanRate, {
   Behavior: createBehavior({
     name: 'Rate',
     extends: ['Field'],

@@ -18,7 +18,7 @@ export const Group = composeExport(withContainer(FormilyGroup), {
     designerLocales: AllLocales.Group,
   }),
   Resource: createResource({
-    icon: 'FormLayoutSource',
+    icon: 'CardSource',
     elements: [
       {
         componentName: 'Field',
