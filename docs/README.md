@@ -1,6 +1,6 @@
 ---
 home: true
-heroText: Formily Van
+heroText: Formily Vant
 tagline: 基于 Van 封装的Formily2.x组件体系
 actionText: 组件文档
 actionLink: /guide/
